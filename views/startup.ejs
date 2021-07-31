@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <%- include('./Assets/header'); %>
+ <title>Basic -Incubatee</title>
+
+
+<body onload="myFunction()">
+<div id="loading"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"><img src="images/logo.jpg" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%=  Username%>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+        
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+           
+          </ul>
+        </li>
+      </ul>    </div>
+  </nav>
+
+
+
+  <!-- Navbar -->
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link " id="l10" href="/personal">Personal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="l10" href="/startup">Basic</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " id="l10" href="/team">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/ip_form">IP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/Businessmodel">Business Model</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/finance">Financials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/Upload_form">Uploads</a>
+        </li>
+
+      </ul>
+
+ 
+    <br>
+    </div>
+  </nav>
+  <div class="container" id="c1">
+    
+    <div class="info">
+      <p> Note : <img src="info.png" class="info-icon" id="a1" align="info"> Symbol will Tell you More About
+        the Given Field .</p>
+      <p> Note : Field with ( <span id="req1">*</span> ) Marked are the Required One .</p>
+      <p> Note : Upload document limit should not exceed 1 MB .</p>
+    </div>
+    <h6 class="display-6">Basic</h6>
+    <form action="/startup" method="POST" enctype="multipart/form-data" class="row g-3 needs-validation" id="basic-form">
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Name of Startup / Organization</label><span id="req1">*</span>
+        <img src="info.png"
+          class="info-icon" onclick="myFunction()"id="a1" align="info">
+        <p id="demo"></p>
+        <script>
+          function myFunction() {
+            document.getElementById("demo").innerHTML = "Please input the name of the organisation as mentioned in Registration Certificate <img src='cross.jpg' class='info-icon' onclick='myFunction1()' id='a1' align='info'>";
+          }
+          function myFunction1() {
+            document.getElementById("demo").innerHTML = " ";
+          }
+        </script>
+        <!-- <a data-bs-toggle=""="tooltip" data-bs-placement="top"
+          title="Please input the name of the organisation as mentioned in Registration Certificate"><img src="info.png"
+            class="info-icon" id="a1" align="info"> </a> -->
+
+        <input type="text" name="startup_name" class="form-control" id="inputEmail4" required>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Product Name</label><span id="req1">*</span>
+        <img src="info.png"
+          class="info-icon" onclick="myFunction2()"id="a1" align="info">
+        <p id="demo1"></p>
+        <script>
+          function myFunction2() {
+            document.getElementById("demo1").innerHTML = "Name of Your Primary/Product Service <img src='cross.jpg' class='info-icon' onclick='myFunction3()' id='a1' align='info'>";
+          }
+          function myFunction3() {
+            document.getElementById("demo1").innerHTML = " ";
+          }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Name of Your Primary/Product Service"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input type="text" name="product_name" class="form-control" id="inputPassword4" required>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress" class="form-label">Website</label>
+        <img src="info.png"
+          class="info-icon" onclick="myurl()"id="a1" align="info">
+        <p id="demo2"></p>
+        <script>
+          function myurl() {
+            document.getElementById("demo2").innerHTML = "URL of your website if applicable <img src='cross.jpg' class='info-icon' onclick='myurl1()' id='a1' align='info'>";
+          }
+          function myurl1() {
+            document.getElementById("demo2").innerHTML = " ";
+          }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="URL of your website if applicable"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input type="text" name="startup_web" class="form-control" id="inputAddress" placeholder="Url of Website">
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Firm Registration Date</label><span id="req1">*</span>
+        <img src="info.png"
+          class="info-icon" onclick="myreg()"id="a1" align="info">
+        <p id="demo3"></p>
+        <script>
+          function myreg() {
+            document.getElementById("demo3").innerHTML = "Select date from calender it should be mentioned in registration certificate <img src='cross.jpg' class='info-icon' onclick='myreg1()' id='a1' align='info'>";
+          }
+          function myreg1() {
+            document.getElementById("demo3").innerHTML = " ";
+          }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Select date from calender it should be mentioned in registration certificate"><img src="info.png"
+            class="info-icon" id="a1" align="info"> </a> -->
+        <input type="Date" name="fr_date" class="form-control" id="inputAddress2" required>
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Is your Company Registered in Maharashtra ?</label>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="yes" id="flexRadioDefault1"
+            checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="no" id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            No
+          </label>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <label for="formFile" class="form-label">Upload Proof of being incorporated in Maharashtra</label>
+        <img src="info.png"
+          class="info-icon" onclick="myCompany()"id="a1" align="info">
+        <p id="demo4"></p>
+        <script>
+          function myCompany() {
+            document.getElementById("demo4").innerHTML = "Certificate of Incorporation, or Company registration with address, or MSME certificate <img src='cross.jpg' class='info-icon' onclick='myCompany1()' id='a1' align='info'>";
+          }
+          function myCompany1() {
+            document.getElementById("demo4").innerHTML = " ";
+          }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Certificate of Incorporation, or Company registration with address, or MSME certificate"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input class="form-control" name="media"  onchange="validateSize1(this)" type="file" id="formFile">
+
+      </div>
+
+      <div class="col-12">
+        <label for="exampleFormControlTextarea1" class="form-label">Registered Company Address</label><span
+          id="req1">*</span>
+          <img src="info.png"
+          class="info-icon" onclick="myadd()"id="a1" align="info">
+        <p id="demo5"></p>
+        <script>
+          function myadd() {
+            document.getElementById("demo5").innerHTML = "Provide your business address - building name, street/locality name, nearby landmark, any other relevant details <img src='cross.jpg' class='info-icon' onclick='myadd1()' id='a1' align='info'>";
+          }
+          function myadd1() {
+            document.getElementById("demo5").innerHTML = " ";
+          }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Provide your business address - building name, street/locality name, nearby landmark, any other relevant details"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="comp_address" id="exampleFormControlTextarea1" rows="2"
+          required></textarea>
+      </div>
+      <div class="col-4">
+        <label for="exampleFormControlTextarea1" class="form-label">State</label><span id="req1">*</span>
+        <img src="info.png"
+        class="info-icon" onclick="mysts()"id="a1" align="info">
+      <p id="demo14"></p>
+      <script>
+        function mysts() {
+          document.getElementById("demo14").innerHTML = "Select state where your business is established <img src='cross.jpg' class='info-icon' onclick='mysts1()' id='a1' align='info'>";
+        }
+        function mysts1() {
+          document.getElementById("demo14").innerHTML = " ";
+        }
+      </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Select state where your business is established"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <select class="form-select" name="state" aria-label="Default select example" required>
+          <option value="">Select State</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Chhattisgarh">Chhattisgarh</option>
+          <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+          <option value="Daman and Diu">Daman and Diu</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Lakshadweep">Lakshadweep</option>
+          <option value="Puducherry">Puducherry</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Haryana">Haryana</option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Odisha">Odisha</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Uttarakhand">Uttarakhand</option>
+          <option value="West Bengal">West Bengal</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">District</label><span id="req1">*</span>
+        <p></p>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="District where business is established"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input type="text" name="district" class="form-control" id="inputEmail4" required>
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">City</label><span id="req1">*</span>
+        <p></p>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="City where business is established"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input type="text" name="city" class="form-control" id="inputEmail4" required>
+      </div>
+
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Business Model Type</label><span id="req1">*</span>
+        <p></p>
+        <select class="form-select" name="businesss_model" aria-label="Default select example" required>
+          <option value="">Open this select menu</option>
+         
+          <option label="B2B" value="B2B">B2B</option>
+          <option label="B2C" value="B2C">B2C</option>
+          <option label="B2G" value="B2G">B2G</option>
+          <option label="OTHER" value="OTHER">OTHER</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Firm Type</label><span id="req1">*</span>
+        <p></p>
+        <select class="form-select" name="firm_type" aria-label="Default select example" required>
+          <option value=" ">Open this select menu</option>
+          <option label="Registered Partnership Firm" value="Registered Partnership Firm">Registered Partnership Firm
+          </option>
+          <option label="Limited Liability Partnership" value="Limited Liability Partnership">Limited Liability
+            Partnership</option>
+          <option label="Private Limited Company" value="Private Limited Company">Private Limited Company</option>
+          <option label="Sole Proprietorship" value="Sole Proprietorship">Sole Proprietorship</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Registration Number</label><span id="req1">*</span>
+        <img src="info.png"
+          class="info-icon" onclick="myfirm()"id="a1" align="info">
+        <p id="demo6"></p>
+        <script>
+          function myfirm() {
+            document.getElementById("demo6").innerHTML = "Company / Firm Registration Number <img src='cross.jpg' class='info-icon' onclick='myfirm1()' id='a1' align='info'>";
+          }
+          function myfirm1() {
+            document.getElementById("demo6").innerHTML = " ";
+          }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Company / Firm Registration Number"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input type="text" name="Registration_no" class="form-control" id="inputEmail4" required>
+      </div>
+
+      <div class="col-md-6">
+       
+        <label for="inputEmail4" class="form-label">Startup Sector</label><span id="req1">*</span>
+        <img src="info.png"
+        class="info-icon" onclick="mysec()"id="a1" align="info">
+      <p id="demo7"></p>
+      <script>
+        function mysec() {
+          document.getElementById("demo7").innerHTML = "Select Appropriate Sector Relevamt to your business  <img src='cross.jpg' class='info-icon' onclick='mysec1()' id='a1' align='info'>";
+        }
+        function mysec1() {
+          document.getElementById("demo7").innerHTML = " ";
+        }
+      </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Select Appropriate Sector Relevamt to your business "><img src="info.png" class="info-icon" id="a1"
+            align="info"> </a> -->
+        <select class="form-select" name="startup_sector" aria-label="Default select example" required>
+          <option value="">Open this select menu</option>
+          <option label="Agriculture" value="Agriculture">Agriculture</option>
+          <option label="Biotechnology" value="Biotechnology">Biotechnology</option>
+          <option label="Clean Energy" value="Clean Energy">Clean Energy</option>
+          <option label="Cyber Security" value="Cyber Security">Cyber Security</option>
+          <option label="Education" value="Education">Education</option>
+          <option label="FinTech" value="FinTech">FinTech</option>
+          <option label="Governance" value="Governance">Governance</option>
+          <option label="Healthcare" value="Healthcare">Healthcare</option>
+          <option label="IT" value="IT">IT</option>
+          <option label="Miscellaneous" value="Miscellaneous">Miscellaneous</option>
+          <option label="Mobility" value="Mobility">Mobility</option>
+          <option label="Rural Development" value="Rural Development">Rural Development</option>
+          <option label="Skilling" value="Skilling">Skilling</option>
+          <option label="Smart Infra" value="Smart Infra">Smart Infra</option>
+          <option label="Social Development" value="Social Development">Social Development</option>
+          <option label="Sustainability (Air,Water &amp; Waste Management)"
+            value="Sustainability (Air,Water &amp; Waste Management)">Sustainability (Air,Water &amp; Waste Management)
+          </option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Technology Used</label><span id="req1">*</span>
+        <img src="info.png"
+        class="info-icon" onclick="mytech()"id="a1" align="info">
+      <p id="demo8"></p>
+      <script>
+        function mytech() {
+          document.getElementById("demo8").innerHTML = "Input Major technologies you are working with <img src='cross.jpg' class='info-icon' onclick='mytech1()' id='a1' align='info'>";
+        }
+        function mytech1() {
+          document.getElementById("demo8").innerHTML = " ";
+        }
+      </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Input Major technologies you are working with"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input type="text" name="technology" class="form-control" id="inputEmail4" required>
+      </div>
+      <div class="col-6">
+        <label for="exampleFormControlTextarea1" class="form-label">Describe your Startup</label><span
+          id="req1">*</span>
+          <img src="info.png"
+        class="info-icon" onclick="mydesc()"id="a1" align="info">
+      <p id="demo9"></p>
+      <script>
+        function mydesc() {
+          document.getElementById("demo9").innerHTML = "Input Short Discription (max 255 Characters) <img src='cross.jpg' class='info-icon' onclick='mydesc1()' id='a1' align='info'>";
+        }
+        function mydesc1() {
+          document.getElementById("demo9").innerHTML = " ";
+        }
+      </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Input Short Discription (max 255 Characters)"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="startup_desc" id="exampleFormControlTextarea1" rows="2"
+          required></textarea>
+      </div>
+      <div class="col-md-6">
+
+        <label for="formFile" class="form-label">Upload your General Pitch Deck</label><span id="req1">*</span><a
+          href="https://community.nasscom.in/wp-content/uploads/2019/12/Mr-Ratan-Tata-Startup-Pitch-Deck-Template.pdf"
+          target="_blank">View Example</a>
+        
+        <input class="form-control" onchange="validateSize1(this)" name="media"  type="file" id="formFile" required>
+
+      </div>
+
+      <div class="col-6">
+        <label for="exampleFormControlTextarea1" class="form-label">Other</label>
+        <img src="info.png"
+        class="info-icon" onclick="mybuss()"id="a1" align="info">
+      <p id="demo10"></p>
+      <script>
+        function mybuss() {
+          document.getElementById("demo10").innerHTML = "Additional Short Discription relevant to your business(max 255 Characters) <img src='cross.jpg' class='info-icon' onclick='mybuss1()' id='a1' align='info'>";
+        }
+        function mybuss1() {
+          document.getElementById("demo10").innerHTML = " ";
+        }
+      </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Additional Short Discription relevant to your business(max 255 Characters)"><img src="info.png"
+            class="info-icon" id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="other" id="exampleFormControlTextarea1" rows="2"></textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Team Size</label><span id="req1">*</span>
+        <img src="info.png"
+        class="info-icon" onclick="mytot()"id="a1" align="info">
+      <p id="demo11"></p>
+      <script>
+        function mytot() {
+          document.getElementById("demo11").innerHTML = "Total no of individual working in your Business <img src='cross.jpg' class='info-icon' onclick='mytot1()' id='a1' align='info'>";
+        }
+        function mytot1() {
+          document.getElementById("demo11").innerHTML = " ";
+        }
+      </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Total no of individual working in your business"><img
+            src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input type="number" name="team_size" class="form-control" id="inputEmail4" required>
+      </div>
+      <div class="col-md-6">
+
+        <label for="formFile" class="form-label">Explainer Video</label>
+        <img src="info.png"
+        class="info-icon" onclick="myvid()"id="a1" align="info">
+      <p id="demo12"></p>
+      <script>
+        function myvid() {
+          document.getElementById("demo12").innerHTML = "Short Video Explaination of your Startup if Available <img src='cross.jpg' class='info-icon' onclick='myvid1()' id='a1' align='info'>";
+        }
+        function myvid1() {
+          document.getElementById("demo12").innerHTML = " ";
+        }
+      </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Short Video Explaination of your Startup if available"><img src="info.png" class="info-icon"
+            id="a1" align="info"> </a> -->
+        <input class="form-control" name="media" onchange="validateSize1(this)" type="file" id="formFile">
+
+      </div>
+      <div class="col-md-6">
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Awards / Achievments</label>
+
+        <input type="text" name="awards" class="form-control" id="inputEmail4">
+        <div class="field_wrapper">
+          <div>
+
+            <a href="javascript:void(0);" class="add_button" title="Add field"><img src="add.png" id="a2"></a>
+          </div>
+        </div>
+        <div class="col-md-6">
+        </div>
+        <script type="text/javascript">
+
+          $(document).ready(function () {
+            var maxField = 10; //Input fields increment limitation
+            var addButton = $('.add_button'); //Add button selector
+            var wrapper = $('.field_wrapper'); //Input field wrapper
+            var fieldHTML = '<div><div class="row"><div class=" col-md-12 a3"><input type="text" class="form-control"  name="awards"  id="inputEmail4"></div><a href="javascript:void(0);" class="remove_button"><img src="cross.jpg" id="a2"></a></div></div>'; //New input field html 
+            var x = 1; //Initial field counter is 1
+            //Once add button is clicked
+            $(addButton).click(function () {
+              //Check maximum number of input fields
+              if (x < maxField) {
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+              }
+            });
+            //Once remove button is clicked
+            $(wrapper).on('click', '.remove_button', function (e) {
+              e.preventDefault();
+              $(this).parent('div').remove(); //Remove field html
+              x--; //Decrement field counter
+            });
+          });
+        </script>
+
+        <div class="col-md-8">
+          <br>
+          <label for="inputEmail4" class="form-label">How did you hear about us?</label><span id="req1">*</span>
+          <img src="info.png"
+        class="info-icon" onclick="mysou()"id="a1" align="info">
+      <p id="demo13"></p>
+      <script>
+        function mysou() {
+          document.getElementById("demo13").innerHTML = "Select appropriate source from where do you come to know about us <img src='cross.jpg' class='info-icon' onclick='mysou1()' id='a1' align='info'>";
+        }
+        function mysou1() {
+          document.getElementById("demo13").innerHTML = " ";
+        }
+      </script>
+          <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Select appropriate source from where do you come to know about us"><img src="info.png"
+              class="info-icon" id="a1" align="info"> </a> -->
+          <select class="form-select" name="hear_about_us" aria-label="Default select example" required>
+            <option value="" translate="" class="ng-scope">Select Option</option>
+            <option value="Newspaper" translate="" class="ng-scope">Newspaper</option>
+            <option value="Facebook" translate="" class="ng-scope">Facebook</option>
+            <option value="Linkedin" translate="" class="ng-scope">Linkedin</option>
+            <option value="Twitter" translate="" class="ng-scope">Twitter</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Whatsapp">Whatsapp</option>
+            <option value="Partner Email">Partner Email</option>
+            <option value="MSINS Email">MSINS Email</option>
+            <option value="Web Banners">Web Banners</option>
+            <option value="Yourstory Article">Yourstory Article</option>
+            <option value="Marketing Displays" translate="" class="ng-scope">Marketing Displays</option>
+            <option value="TV Ads" translate="" class="ng-scope">TV Ads</option>
+            <option value="Radio Ads" translate="" class="ng-scope">Radio Ads</option>
+            <option value="Events" translate="" class="ng-scope">Events</option>
+            <option value="Agni" translate="" class="ng-scope">Agni</option>
+            <option value="Other" translate="" class="ng-scope">Other</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div class="col-md-12">
+
+          <br>
+          <label for="inputAddress2" class="form-label">Have you ever been an Incubatee?</label><span id="req1">*</span>
+          <label for="chkYes">
+            <input type="radio" id="chkYes" value="Yes" name="Incubate" onclick="ShowHideDiv()" />
+            Yes
+          </label>
+          <label for="chkNo">
+            <input type="radio" id="chkNo" value="No" name="Incubate" onclick="ShowHideDiv()" />
+            No
+          </label>
+
+        </div>
+        <div class="col-md-12 " id="dvtext" style="display: none">
+
+          <label for="fIpDescription" class="form-label">Please mention the name of the Incubator: [Max 255
+            characters]</label>
+          <textarea class="form-control" name="Incubator_name" id="exampleFormControlTextarea1" rows="2"
+            ></textarea>
+        </div>
+
+        <script>
+          function ShowHideDiv() {
+            var chkYes = document.getElementById("chkYes");
+            var dvtext = document.getElementById("dvtext");
+            dvtext.style.display = chkYes.checked ? "block" : "none";
+          }
+        </script>
+      </div>
+
+      <br>
+      <hr>
+      <br>
+      <h6 class="display-6">Bank Details</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Name of Account Holder</label>
+
+          <input type="text" name="acc_name" class="form-control" id="inputEmail4" >
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Account Number</label>
+
+          <input type="text" name="acc_no" class="form-control" id="inputEmail4" >
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Name of Bank</label>
+
+          <input type="text" name="bank_name" class="form-control" id="inputEmail4" >
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">IFSC Code</label>
+
+          <input type="text" name="IFSC" class="form-control" id="inputEmail4" >
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Branch Name</label>
+
+          <input type="text" name="branch" class="form-control" id="inputEmail4" >
+        </div>
+        <div class="col-md-6">
+
+          <label for="formFile" class="form-label">Upload a Cancelled Cheque</label>
+
+          <input class="form-control" onchange="validateSize1(this)" name="media"  type="file" id="formFile" >
+
+        </div>
+        <div class="col-md-5">
+        </div>
+        <div class="col-md-7">
+          <br>
+          <button type="submit" id="btn1" class="btn btn-primary">Submit</button>
+
+        </div>
+      </div>
+
+
+    </form>
+
+
+  </div>
+
+  <br><br>
+
+  <!-- End Subscribe & Social Links Widget -->
+
+  <!-- Start Copyright -->
+  <div class="footer-clean">
+    <footer class="l9">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-4 col-md-2 item">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/opportunities.php">CAREERS </a></li>
+              <li><a href="https://alumni.mitaoe.ac.in/" target="_blank">ALUMNI</a></li>
+              <li><a href="https://mitaoe.ac.in/contact-us.php">CONTACT</a></li>
+
+              <li><a href="https://mitaoe.ac.in/blog.php">BLOG</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-2 item">
+            <h3>IMP Links</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/mitaoe-nirf.php">NIRF</a></li>
+              <li><a href="https://mitaoe.ac.in/mandatory-disclosure.php">MANDATORY DISCLOSURE</a></li>
+
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-downloads.php">DOWNLOADS</a></li>
+              <li><a href="https://mitaoe.ac.in/">READ MORE</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-4 col-md-2 item">
+            <h3>IMP Links</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/mitaoe-quality-assurance.php">IQAC</a></li>
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-statutory-compliance.php">STATUTORY COMPLIANCE</a></li>
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-committees.php">GRIEVANCE REDRESSAL</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 item social">
+
+            <div class="socials">
+
+              <a href="https://www.facebook.com/MITAOEOfficial/" id="fb" class="icon-button twitter" target="_blank"><i
+                  class="fab fa-facebook" aria-hidden="true"></i><span></span></a>
+
+              <a href="https://www.youtube.com/channel/UCL4DWs9R4irwWUTFg8BYsOQ" id="fb" class="icon-button twitter"
+                target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i><span></span></a>
+
+              <a href="https://www.linkedin.com/company/mit-academy-of-engineering/" id="linkedin1"
+                class="icon-button facebook" target="_blank"><i class="fab fa-linkedin"></i><span></span></a>
+
+              <a href="https://www.instagram.com/mitacademyofengineering/" id="insta" class="icon-button google-plus"
+                target="_blank"><i class="fab fa-instagram"></i><span></span></a>
+
+
+
+            </div>
+
+
+
+            <p id="copyright" class="copyright"></p>
+                 <script>
+                      var d = new Date()
+                      var D = d.getFullYear()
+            document.getElementById("copyright").innerHTML =' &copy' +D+' MIT Academy of Engineering';
+            </script>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+
+  <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+
+
+
+  <!-- End Footer -->
+  </div>
+  <!-- End Container -->
+
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top"><i class="icon-up-open-1"></i></a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+  </div>
+  <!-- <script>
+    $(".projects-carousel").owlCarousel({
+      items: 4,
+      autoPlay: true
+    }); -->
+   </script>
+  <!-- <script>
+    $(document).ready(function () {
+      $("#basic-form").validate();
+    });
+  </script> --> 
+  <script>function validateSize1(input) {
+    const fileSize = input.files[0].size ; // in MiB
+    if (fileSize > 1024 * 1024) {
+      alert('File size exceeds 1 MB');
+      // $(file).val(''); //for clearing with Jquery
+    } else {
+      // Proceed further
+    }
+  }</script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('input[type="radio"]').click(function () {
+        var inputValue = $(this).attr("value");
+        var targetBox = $("." + inputValue);
+        $(".selectt").not(targetBox).hide();
+        $(targetBox).show();
+      });
+    });
+  </script>
+  <script>
+    (function () {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
+
+
+
+</body>
+
+</html>
+     
+

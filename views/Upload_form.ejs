@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <%- include('./Assets/header'); %>
+ <title>Upload-Form -Incubatee</title>
+
+<body onload="myFunction()">
+<div id="loading"></div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+     <a class="navbar-brand" href="/"><img src="images/logo.jpg" alt=""></a>
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%=  Username%>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+           
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- Navbar -->
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/personal">Personal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/startup">Basic</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/team">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/ip_form">IP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " id="l10" href="/Businessmodel">Business Model</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " id="l10" href="/finance">Financials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="l10" href="/Upload_form">Uploads</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <!--        start of form           -->
+  
+
+  <div class="container" id="c1">
+            
+    <br>
+
+    <form  action="/Upload_form" method="POST" enctype="multipart/form-data" class="row g-3 needs-validation" id="basic-form">
+      <div class="info">
+        <p> Note : Upload document limit should not exceed 1 MB .</p>
+      </div>
+     
+        <h6 class="display-6">Uploads</h6>
+<br>
+  
+      <div class="col-md-8">
+        <label for="fUniquenessFactor" class="form-label">Is your startup DPIIT registered?</label><span id="req1">*</span>
+        
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  No
+                </label>
+              </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="col-md-4">
+        <label for="fKeyPartners" class="form-label">Company Logo</label>
+      
+      </div>
+      <div class="col-md-4">
+      
+       </div>
+      <div class="col-md-4">
+            <input  name="media"  onchange="validateSize1(this)" class="form-control" type="file" id="formFile" >
+      </div>
+      
+      <script>function validateSize1(input) {
+        const fileSize = input.files[0].size ; // in MiB
+        if (fileSize > 1024 * 1024) {
+          alert('File size exceeds 1 MB');
+          // $(file).val(''); //for clearing with Jquery
+        } else {
+          // Proceed further
+        }
+      }</script>
+      <br>
+      <hr>
+      <br>
+      <div class="col-md-4">
+        <label for="fKeyPartners" class="form-label">Company Pancard</label>
+       
+      </div>
+      <div class="col-md-4">
+        <input type="text" name="PanNo" class="form-control" id="inputEmail4" placeholder="Pancard No.">
+       </div>
+      <div class="col-md-4">
+            <input  name="media"  onchange="validateSize1(this)" class="form-control" type="file" id="formFile" >
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="col-md-4">
+        <label for="fKeyPartners" class="form-label">Udyog Adhar</label>
+      
+      </div>
+      <div class="col-md-4">
+       <input type="text" name="UdyogAdhar" class="form-control" id="inputEmail4" placeholder="Udyog Adhar No.">
+      </div>
+      <div class="col-md-4">
+            <input  name="media" onchange="validateSize1(this)" class="form-control" type="file" id="formFile" >
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="col-md-4">
+        <label for="fKeyPartners" class="form-label">Comapany GSTIN</label>
+      
+      </div>
+      <div class="col-md-4">
+        <input type="text" name="companyGSTIN" class="form-control" id="inputEmail4" placeholder="GSTIN No.">
+       </div>
+      <div class="col-md-4">
+            <input  name="media"  onchange="validateSize1(this) " class="form-control" type="file" id="formFile" >
+      </div>
+      <br>
+      <hr>
+      <br>
+
+      <div class="col-md-4">
+        <label for="fKeyPartners" class="form-label">Company Registration ID</label>
+        
+      </div>
+      <div class="col-md-4">
+        <input type="text" name="CompanyRegID" class="form-control" id="inputEmail4" placeholder="Registration No.">
+       </div>
+      <div class="col-md-4">
+            <input  name="media"  onchange="validateSize1(this)" class="form-control" type="file" id="formFile" >
+      </div>
+      <br>
+      <hr>
+      
+      <br>
+      
+
+      
+
+      <div class="row g-3">
+
+
+       
+       
+        <div class="col-md-6">
+            <label for="fKeyPartners" class="form-label">Upload relevant documents</label>
+          
+          </div>
+          <div class="col-md-6">
+                <input  name="media"  class="form-control" type="file" id="formFile" >
+          </div>
+
+        <div class="field_wrapper">
+          <div>
+
+            <a href="javascript:void(0);" class="add_button" title="Add field"><img src="add.png" id="a2"></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-12">
+          <br><br>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-7">
+
+         <button type="submit" id="btn1" class="btn btn-primary">Submit</button>
+         
+
+       
+
+        </div>
+      </div>
+      <script type="text/javascript">
+      
+        $(document).ready(function () {
+          var maxField = 10; //Input fields increment limitation
+          var addButton = $('.add_button'); //Add button selector
+          var wrapper = $('.field_wrapper'); //Input field wrapper
+          var fieldHTML = '<div><div class="row"><div class="col-md-6"><label for="fKeyPartners" class="form-label">Upload relevant documents</label></div><div class="col-md-6"><input  name="media"  class="form-control" type="file" id="formFile" ></div><a href="javascript:void(0);" class="remove_button"><img src="cross.jpg" id="a2"></a></div></div>'; //New input field html 
+          var x = 1; //Initial field counter is 1
+
+          //Once add button is clicked
+          $(addButton).click(function () {
+            //Check maximum number of input fields
+            if (x < maxField) {
+              x++; //Increment field counter
+              $(wrapper).append(fieldHTML); //Add field html
+            }
+          });
+
+          //Once remove button is clicked
+          $(wrapper).on('click', '.remove_button', function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+          });
+        });
+      </script>
+
+    </form>
+       </div>
+
+  <!--                    end of form                      -->
+  <br><br>
+  
+
+
+  <!-- End Subscribe & Social Links Widget -->
+
+  <!-- Start Copyright -->
+  <div class="footer-clean">
+    <footer class="l9">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-4 col-md-2 item">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/opportunities.php">CAREERS </a></li>
+              <li><a href="https://alumni.mitaoe.ac.in/" target="_blank">ALUMNI</a></li>
+              <li><a href="https://mitaoe.ac.in/contact-us.php">CONTACT</a></li>
+
+              <li><a href="https://mitaoe.ac.in/blog.php">BLOG</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-2 item">
+            <h3>IMP Links</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/mitaoe-nirf.php">NIRF</a></li>
+              <li><a href="https://mitaoe.ac.in/mandatory-disclosure.php">MANDATORY DISCLOSURE</a></li>
+
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-downloads.php">DOWNLOADS</a></li>
+              <li><a href="https://mitaoe.ac.in/">READ MORE</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-4 col-md-2 item">
+            <h3>IMP Links</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/mitaoe-quality-assurance.php">IQAC</a></li>
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-statutory-compliance.php">STATUTORY COMPLIANCE</a></li>
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-committees.php">GRIEVANCE REDRESSAL</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 item social">
+
+            <div class="socials">
+
+              <a href="https://www.facebook.com/MITAOEOfficial/" id="fb" class="icon-button twitter" target="_blank"><i
+                  class="fab fa-facebook" aria-hidden="true"></i><span></span></a>
+
+              <a href="https://www.youtube.com/channel/UCL4DWs9R4irwWUTFg8BYsOQ" id="fb" class="icon-button twitter"
+                target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i><span></span></a>
+
+              <a href="https://www.linkedin.com/company/mit-academy-of-engineering/" id="linkedin1"
+                class="icon-button facebook" target="_blank"><i class="fab fa-linkedin"></i><span></span></a>
+
+              <a href="https://www.instagram.com/mitacademyofengineering/" id="insta" class="icon-button google-plus"
+                target="_blank"><i class="fab fa-instagram"></i><span></span></a>
+
+
+
+            </div>
+
+
+
+            <p id="copyright" class="copyright"></p>
+                 <script>
+                      var d = new Date()
+                      var D = d.getFullYear()
+            document.getElementById("copyright").innerHTML =' &copy' +D+' MIT Academy of Engineering';
+            </script>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+
+  <!-- End Footer -->
+
+  <!-- End Container -->
+
+  <!-- Go To Top Link -->
+
+     
+ 
+
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+  var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+</script> 
+
+

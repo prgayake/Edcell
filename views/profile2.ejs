@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Favicons -->
+  <link rel="icon" type="image/png" href="images/logo.jpg"/>
+
+
+    <title><%=Name%> Edit Profile </title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<style>
+    body {
+        background: -webkit-linear-gradient(left, #01acfc, #3c53d4);
+    }
+
+    #a2 {
+        height: 20px;
+        width: 20px;
+        margin: 2px;
+    }
+
+    #mar {
+        margin-top: 5px;
+        padding: 5px;
+    }
+
+    .emp-profile {
+        padding: 3%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        border-radius: 0.5rem;
+        background: #fff;
+    }
+
+    .profile-img {
+        text-align: center;
+    }
+
+    .profile-img img {
+        width: 70%;
+        height: 100%;
+    }
+
+    .profile-img .file {
+        position: relative;
+        overflow: hidden;
+        margin-top: -20%;
+        width: 70%;
+        border: none;
+        border-radius: 0;
+        font-size: 15px;
+        background: #212529b8;
+    }
+
+    .profile-img .file input {
+        position: absolute;
+        opacity: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .profile-head h5 {
+        color: #333;
+    }
+
+    .profile-head h6 {
+        color: #0062cc;
+    }
+
+    .profile-edit-btn {
+        border: none;
+        border-radius: 1.5rem;
+        width: 70%;
+        padding: 2%;
+        font-weight: 600;
+        color: #6c757d;
+        cursor: pointer;
+    }
+
+    .proile-rating {
+        font-size: 12px;
+        color: #818182;
+        margin-top: 5%;
+    }
+
+    .proile-rating span {
+        color: #495057;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .profile-head .nav-tabs {
+        margin-bottom: 5%;
+    }
+
+    .profile-head .nav-tabs .nav-link {
+        font-weight: 600;
+        border: none;
+    }
+
+    .profile-head .nav-tabs .nav-link.active {
+        border: none;
+        border-bottom: 2px solid #0062cc;
+    }
+
+    .profile-work {
+        padding: 14%;
+        margin-top: -15%;
+    }
+
+    .profile-work p {
+        font-size: 12px;
+        color: #818182;
+        font-weight: 600;
+        margin-top: 10%;
+    }
+
+    .profile-work a {
+        text-decoration: none;
+        color: #495057;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .profile-work ul {
+        list-style: none;
+    }
+
+    .profile-tab label {
+        font-weight: 600;
+    }
+
+    .profile-tab p {
+        font-weight: 600;
+        color: #0062cc;
+    }
+    #dec{
+        text-decoration: none;
+    }
+</style>
+
+   
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+</body>
+<body>
+
+
+<body onload="myFunction()">
+<div id="loading"></div>
+
+</html>
+<!------ Include the above in your HEAD tag ---------->
+
+<a href="/profile" style="color:white" id="dec"><strong><button  class="btn btn-success" id="bback">BACK</button></strong></a>
+<div class="container emp-profile">
+  
+    <form action="/profile2" method="POST">
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        <%=Name%>
+                    </h5>
+                       <p id="username" hidden=""><%=Username%> </p>
+                       <p id="skill"></p>
+                    
+                    <p class="proile-rating"></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>Linkedin</p>
+                    <div class="col-md-8" id="mar">
+                        <input name="Linkedin" type="url" class="form-control" id="linkedin1">
+                    </div>
+                    <p>facebook</p>
+                    <div class="col-md-8" id="mar">
+                        <input name="facebook" type="url" class="form-control" id="fb">
+                    </div>
+                    <p>Instagram</p>
+                    <div class="col-md-8" id="mar">
+                        <input name="Instagram" type="url" class="form-control" id="insta">
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+
+                $(document).ready(function () {
+                    var maxField = 10; //Input fields increment limitation
+                    var addButton = $('.add_button'); //Add button selector
+                    var wrapper = $('.field_wrapper'); //Input field wrapper
+                    var fieldHTML = '<div><div class=" col-md-6"><input name="skills"  type="text" class="form-control" id="inputEmail4"></div><a href="javascript:void(0);" class="remove_button"><img src="cross.jpg" id="a2"></a></div>'; //New input field html 
+                    var x = 1; //Initial field counter is 1
+
+                    //Once add button is clicked
+                    $(addButton).click(function () {
+                        //Check maximum number of input fields
+                        if (x < maxField) {
+                            x++; //Increment field counter
+                            $(wrapper).append(fieldHTML); //Add field html
+                        }
+                    });
+
+                    //Once remove button is clicked
+                    $(wrapper).on('click', '.remove_button', function (e) {
+                        e.preventDefault();
+                        $(this).parent('div').remove(); //Remove field html
+                        x--; //Decrement field counter
+                    });
+                });
+            </script>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Mention Brief About Portfolio </label>
+                            </div>
+
+
+                            <div class="col-md-6" id="mar">
+                                <textarea id="portfolio" name="Portfolio" class="form-control" id="portfolio" rows="2"></textarea>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Awards / Achievments</label>
+                            </div>
+                            <p id="uname" hidden=""><%=Username%></p>
+
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6">
+                                <div id="inputFormRow">
+                                    <div class="input-group mb-3">
+                                        <input name="Awards" type="text"  class="form-control m-input"
+                                            placeholder="Enter Awards" autocomplete="off" id="Awards">
+                                        <div class="input-group-append">
+                                            <button id="removeRow" type="button" class="btn btn-light"><img
+                                                    src="cross.jpg" id="a2" alt=""></button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="newRow"></div>
+                                <button id="addRow" type="button" class="btn btn-light"><img src="add.png" id="a2"
+                                        alt=""></button>
+
+                            </div>
+
+                            <script type="text/javascript">
+                                // add row
+                                $("#addRow").click(function () {
+                                    var html = '';
+                                    html += '<div id="inputFormRow">';
+                                    html += '<div class="input-group mb-3">';
+                                    html += '<input name="Awards" type="text"  class="form-control m-input" placeholder="Enter title" autocomplete="off">';
+                                    html += '<div class="input-group-append">';
+                                    html += '<button id="removeRow" type="button" class="btn btn-light"><img src="cross.jpg" alt="" id="a2"></button>';
+                                    html += '</div>';
+                                    html += '</div>';
+
+                                    $('#newRow').append(html);
+                                });
+
+                                // remove row
+                                $(document).on('click', '#removeRow', function () {
+                                    $(this).closest('#inputFormRow').remove();
+                                });
+                            </script>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <br>
+                                <label>Skills</label>
+                                <input name="skills" type="text" class="form-control" id="skill">
+                            </div>
+                            <div class="field_wrapper">
+                                <div>
+                                    <a href="javascript:void(0);" class="add_button" title="Add field"><img
+                                            src="add.png" id="a2"></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <br>
+
+                    </div>
+                    <div class="col-md-6">
+                        <br>
+                        <input type="submit" class="btn btn-primary " name="btnAddMore" value="Save Changes" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+  <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+ <p hidden="">
+        <%
+
+    //Firebase Configuration Starts !!!
+        
+        var api_key = process.env.API_KEY
+        var authdomain = process.env.AUTHDOMAIN
+        var dburl= process.env.DBURL
+       var projectId = process.env.PROJECT_ID
+       var storageBucket = process.env.STORAGE_BUCKET
+       var messagingSenderId = process.env.MESSAGESENDER
+      var  appId = process.env.APPID
+
+        %>
+    </p>
+</div>
+
+<HTML>
+<HEAD>
+<SCRIPT>
+
+code = "%20%20%3Cscript%20src%3D%22./js/config1.js%22%20%3E%3C/script%3E" 
+document.write(unescape(code))
+//-->
+</SCRIPT>
+</HEAD>
+</HTML>
+
+
+<script type="text/javascript">
+    function myfun() {
+        // body...
+    
+Swal.fire({
+  icon: 'success',
+  title: 'Profile Updated',
+  text: 'Password and Confirm Password Does not match !',
+  footer: 'Try Again !'
+})
+}
+</script>

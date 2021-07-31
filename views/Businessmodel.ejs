@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <%- include('./Assets/header'); %>
+ <title>Business Model -Incubatee</title>
+
+
+<body onload="myFunction()">
+<div id="loading"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand" href="/"><img src="images/logo.jpg" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+       
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%=Username%>
+            </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+           
+          </ul>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- Navbar -->
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/personal">Personal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/startup">Basic</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/team">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/ip_form">IP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active " id="l10" href="/Businessmodel">Business Model</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " id="l10" href="/finance">Financials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/Upload_form">Uploads</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <!--        start of form           -->
+
+
+  <div class="container" id="c1">
+    <div class="info">
+      <p> Note : <img src="info.png" class="info-icon" id="a1" align="info"> Symbol will Tell you More About
+        the Given Field .</p>
+      <p> Note : Field with ( <span id="req1">*</span> ) Marked are the Required One .</p>
+    </div>
+    <h6 class="display-6">Business Model</h6>
+    <br>
+
+    <form action="/Businessmodel" method="POST" class="row g-3 needs-validation novalidate">
+
+      <div class="col-md-6">
+        <label for="inputStage" class="form-label">Start-up Current Stage</label><span id="req1">*</span>
+        <img src="info.png" class="info-icon" onclick="myup11()" id="a1" align="info">
+          <p id="demo"></p>
+          <script>
+              function myup11() {
+                  document.getElementById("demo").innerHTML = "Select relevent stage currently applicable. <img src='cross.jpg' class='info-icon' onclick='myup111()' id='a1' align='info'>";
+              }
+              function myup111() {
+                  document.getElementById("demo").innerHTML = " ";
+              }
+          </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Select relevent stage currently applicable."><img
+            src="images/info.png" class="info-icon" id="a1" align="info"> </a> -->
+
+        <select class="form-select" name="stp_curr_stage" aria-label="Default select example" required>
+          <option value="">--select the option--</option>
+          <option label="Idation" value="Idation">Idation</option>
+          <option label="Scaling Up" value="Scaling Up">Scaling Up</option>
+          <option label="Mature" value="Mature">Mature</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="fUniquenessFactor" class="form-label">Uniqueness Factor / Uniqueness Features</label><span
+          id="req1">*</span>
+          <img src="info.png" class="info-icon" onclick="myup2()" id="a1" align="info">
+          <p id="demo2"></p>
+          <script>
+              function myup2() {
+                  document.getElementById("demo2").innerHTML = "Select uniqueness features of your product/service that differentiate you from others. <img src='cross.jpg' class='info-icon' onclick='myup22()' id='a1' align='info'>";
+              }
+              function myup22() {
+                  document.getElementById("demo2").innerHTML = " ";
+              }
+          </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Select uniqueness features of your product/service that differentiate you from others."><img
+            src="images/info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <input type="text" name="uniqueness_factor" class="form-control" id="inputUniquenessFactor" required>
+
+      </div>
+
+      <div class="col-md-6">
+        <label for="fKeyPartners" class="form-label">Key Partners / Resources</label>
+        <img src="info.png" class="info-icon" onclick="myup3()" id="a1" align="info">
+        <p id="demo3"></p>
+        <script>
+            function myup3() {
+                document.getElementById("demo3").innerHTML = "Mention your key partners <img src='cross.jpg' class='info-icon' onclick='myup33()' id='a1' align='info'>";
+            }
+            function myup33() {
+                document.getElementById("demo3").innerHTML = " ";
+            }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Mention your key partners"><img src="images/info.png"
+            class="info-icon" id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="key_partners" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+      </div>
+
+      <div class="col-md-6">
+        <label for="fCostStructure" class="form-label">Cost Structure</label>
+        <img src="info.png" class="info-icon" onclick="myup4()" id="a1" align="info">
+        <p id="demo4"></p>
+        <script>
+            function myup4() {
+                document.getElementById("demo4").innerHTML = "Describe the overall costing of your product/service. <img src='cross.jpg' class='info-icon' onclick='myup44()' id='a1' align='info'>";
+            }
+            function myup44() {
+                document.getElementById("demo4").innerHTML = " ";
+            }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Describe the overall costing of your product/service."><img src="images/info.png" class="info-icon"
+            id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="cost_structure" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+
+      </div>
+
+      <div class="col-md-6">
+        <label for="fRevenueInflow" class="form-label">Revenue Inflow</label>
+        <img src="info.png" class="info-icon" onclick="myup5()" id="a1" align="info">
+        <p id="demo5"></p>
+        <script>
+            function myup5() {
+                document.getElementById("demo5").innerHTML = "Mention the revenue figures against your business. <img src='cross.jpg' class='info-icon' onclick='myup15()' id='a1' align='info'>";
+            }
+            function myup15() {
+                document.getElementById("demo5").innerHTML = " ";
+            }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Mention the revenue figures against your business."><img src="images/info.png" class="info-icon"
+            id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="Revenue_inflow" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+      </div>
+      <div class="col-md-6">
+        <label for="fRevenueInflow" class="form-label">Customer Segment</label>
+        <img src="info.png" class="info-icon" onclick="myup6()" id="a1" align="info">
+        <p id="demo6"></p>
+        <script>
+            function myup6() {
+                document.getElementById("demo6").innerHTML = "Target Customers. <img src='cross.jpg' class='info-icon' onclick='myup16()' id='a1' align='info'>";
+            }
+            function myup16() {
+                document.getElementById("demo6").innerHTML = " ";
+            }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Target Customers."><img src="images/info.png"
+            class="info-icon" id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="Customer_Segment" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+      </div>
+      <div class="col-md-6">
+        <label for="fRevenueInflow" class="form-label">Key Matrix</label>
+        <img src="info.png" class="info-icon" onclick="myup7()" id="a1" align="info">
+        <p id="demo7"></p>
+        <script>
+            function myup7() {
+                document.getElementById("demo7").innerHTML = "Key Activities you Measure. <img src='cross.jpg' class='info-icon' onclick='myup17()' id='a1' align='info'>";
+            }
+            function myup17() {
+                document.getElementById("demo7").innerHTML = " ";
+            }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Key Activities you Measure."><img
+            src="images/info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="Key_Matrix" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+      </div>
+      <div class="col-md-6">
+        <label for="fRevenueInflow" class="form-label">Channels</label>
+        <img src="info.png" class="info-icon" onclick="myup8()" id="a1" align="info">
+        <p id="demo8"></p>
+        <script>
+            function myup8() {
+                document.getElementById("demo8").innerHTML = "Path to Customers. <img src='cross.jpg' class='info-icon' onclick='myup18()' id='a1' align='info'>";
+            }
+            function myup18() {
+                document.getElementById("demo8").innerHTML = " ";
+            }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Path to Customers."><img src="images/info.png"
+            class="info-icon" id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="Channels" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+
+      </div>
+      <div class="col-md-6">
+        <label for="fRevenueInflow" class="form-label">Unique Value</label>
+        <img src="info.png" class="info-icon" onclick="myup9()" id="a1" align="info">
+        <p id="demo9"></p>
+        <script>
+            function myup9() {
+                document.getElementById("demo9").innerHTML = "Single Clear Compelling message that states why you are Different and Worth Paying Attention. <img src='cross.jpg' class='info-icon' onclick='myup19()' id='a1' align='info'>";
+            }
+            function myup1() {
+                document.getElementById("demo9").innerHTML = " ";
+            }
+        </script>
+        <!-- <a data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Single Clear Compelling message that states why you are Different and Worth Paying Attention."><img
+            src="images/info.png" class="info-icon" id="a1" align="info"> </a> -->
+        <textarea class="form-control" name="Unique_Value" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+      </div>
+
+      <div class="col-md-7"></div>
+      <div class="col-md-5">
+
+        <button type="submit" id="btn1" class="btn btn-primary">Submit</button>
+
+
+      </div>
+  </div>
+
+  </form>
+  </div>
+  <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+
+  <!--                    end of form                      -->
+  <br><br>
+
+
+
+
+  <!-- End Subscribe & Social Links Widget -->
+
+  <!-- Start Copyright -->
+  <%- include('./Assets/footer'); %>
+
+
+
+  <!-- End Footer -->
+
+  <!-- End Container -->
+
+  <!-- Go To Top Link -->
+
+
+  <script>
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,265 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/*   navbar css code   */
+.container-fluid {
+  padding: 1% 5%;
+}
+
+.navbar {
+  padding: 0 1rem 0 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+ 
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover {
+  margin-bottom: 20px;
+  border-bottom: 4px solid green;
+}
+
+/* title image css */
+/* .title-image{
+  width: 100%;
+
+} */
+/*   login form css complete   */
+.contentbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.contentbox .formbox {
+  padding: 40px;
+  border:1px solid #607d8b;
+  border-radius: 10px;
+}
+
+
+.contentbox .formbox:hover {
+
+  padding: 40px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.contentbox .formbox .headline-login {
+  color: #607d8b;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #ff4584;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.contentbox .formbox .headline-login .clk-login {
+  color: #607d8b;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.contentbox .formbox .inputbox {
+  margin-bottom: 20px;
+}
+
+.contentbox .formbox .inputbox span {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: #607d8b;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.contentbox .formbox .inputbox input {
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #607d8b;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #607d8b;
+  background: transparent;
+  border-radius: 30px;
+}
+
+.contentbox .formbox .inputbox input[type="submit"] {
+  background: #ff4584;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.contentbox .formbox .inputbox input[type="submit"]:hover {
+  background: #f53677;
+}
+
+.contentbox .formbox .remember {
+  margin-bottom: 10px;
+  color: #607d8b;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.contentbox .formbox .inputbox .p1 {
+  color: #607d8b;
+}
+
+.contentbox .formbox .inputbox .p1 a {
+  color: #ff4584;
+}
+
+
+
+
+
+/*END OF LOGIN CSS*/
+
+
+
+section .contentbox-signup .formbox-signup .headline-signup .clk-signup{
+  color: #607d8b;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+section .contentbox-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+section .contentbox-signup .formbox-signup {
+  width: 50%;
+  padding: 40px;
+  border:1px solid #607d8b;
+
+}
+
+section .contentbox-signup .formbox-signup:hover {
+  width: 50%;
+  padding: 40px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+section .contentbox-signup .formbox-signup .headline-signup {
+  color: #607d8b;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #ff4584;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+section .contentbox-signup .formbox-signup .headline-login .clk-signup{
+  color: #607d8b;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+section .contentbox-signup .formbox-signup .inputbox {
+  margin-bottom: 10px;
+}
+
+section .contentbox-signup .formbox-signup .inputbox span {
+  font-size: 16px;
+  margin-bottom: 2px;
+  display: inline-block;
+  color: #607d8b;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+section .contentbox-signup .formbox-signup .inputbox input {
+  width: 100%;
+  padding: 5px 10px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #607d8b;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #607d8b;
+  background: transparent;
+  border-radius: 30px;
+}
+
+
+section .contentbox-signup .formbox-signup .inputbox input[type="submit"] {
+  background: #ff4584;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+section .contentbox-signup .formbox-signup .inputbox input[type="submit"]:hover {
+  background: #f53677;
+}
+
+section .contentbox-signup .formbox-signup .inputbox .p1 {
+  color: #607d8b;
+}
+
+section .contentbox-signup .formbox-signup .inputbox .p1 a {
+  color: #ff4584;
+}
+
+section .contentbox-signup .formbox-signup .inputbox select{
+  color: #607d8b;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #607d8b;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #607d8b;
+  background: transparent;
+  border-radius: 30px;
+
+}
+
+
+
+/* css for signup drop down */
+.contentbox .formbox .inputbox select{
+  color: #607d8b;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #607d8b;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #607d8b;
+  background: transparent;
+  border-radius: 30px;
+
+}
+
+
+/*Social media Icons

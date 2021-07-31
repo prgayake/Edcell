@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <%- include('./Assets/header'); %>
+
+<body onload="myFunction()">
+<div id="loading"></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="/"><img src="images/logo.jpg" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <%=  Username%>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                        
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" id="l10" href="/personal">Personal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="l10" href="/startup">Basic</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="l10" href="/team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="l10" href="/ip_form">IP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " id="l10" href="/Businessmodel">Business Model</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="l10" href="/finance">Financials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="l10" href="/Upload_form">Uploads</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--        start of form           -->
+    <div class="container" id="c1">
+        <div class="info">
+            <p> Note : <img src="info.png" class="info-icon" id="a1" align="info"> Symbol will Tell you More About the Given Field .</p>
+            <p> Note : Field with ( <span id="req1">*</span> ) Marked are the Required One .</p>
+            <p> Note : Upload document limit should not exceed 1 MB .</p>
+        </div>
+        <h6 class="display-6">Financials</h6>
+        <br>
+        <form action="/finance" method="POST" enctype="multipart/form-data" class="row g-3 needs-validation" id="basic-form">
+            <div class="col-md-6">
+                <label for="fUniquenessFactor" class="form-label">Maximum Turnover of Any of the Previous Three Financial Years</label><span id="req1">*</span>
+                <img src="info.png" class="info-icon" onclick="myup9()" id="a1" align="info">
+        <p id="demo9"></p>
+        <script>
+            function myup9() {
+                document.getElementById("demo9").innerHTML = "Mention amount of funds available. <img src='cross.jpg' class='info-icon' onclick='myup19()' id='a1' align='info'>";
+            }
+            function myup19() {
+                document.getElementById("demo9").innerHTML = " ";
+            }
+        </script>
+                
+                <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="c"><img src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+                <select name="max_turnover" class="form-select" aria-label="Default select example" required>
+                    <option value="" class="" selected="selected">-- Select an option--</option>
+                    <option label="Less than 50 lakh" value="Less than 50 lakh">Less than 50 lakh</option>
+                    <option label="Between 50 lakh &amp; 1 Cr" value="Between 50 lakh &amp; 1 Cr">Between 50 lakh &amp; 1 Cr</option>
+                    <option label="Between 1 Cr &amp; 5 Cr" value="Between 1 Cr &amp; 5 Cr">Between 1 Cr &amp; 5 Cr</option>
+                    <option label="Between 5 Cr &amp; 10 Cr" value="Between 5 Cr &amp; 10 Cr">Between 5 Cr &amp; 10 Cr</option>
+                    <option label="Between 10 Cr &amp; 25 Cr" value="Between 10 Cr &amp; 25 Cr">Between 10 Cr &amp; 25 Cr</option>
+                    <option label="Between 25-100 Crore" value="Between 25-100 Crore">Between 25-100 Crore</option>
+                    <option label="Over 100 Crore" value="number:6">Over 100 Crore</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="fKeyPartners" class="form-label">What is the Startup’s Current Funding Status?</label><span id="req1">*</span>
+                <img src="info.png" class="info-icon" onclick="myup6()" id="a1" align="info">
+        <p id="demo6"></p>
+        <script>
+            function myup6() {
+                document.getElementById("demo6").innerHTML = "Specify last source -Name of firm/invester <img src='cross.jpg' class='info-icon' onclick='myup16()' id='a1' align='info'>";
+            }
+            function myup16() {
+                document.getElementById("demo6").innerHTML = " ";
+            }
+        </script>
+                <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Specify last source -Name of firm/invester"><img src="info.png" class="info-icon" id="a1" align="info"> </a> -->
+                <select name="current_funding" class="form-select" aria-label="Default select example" required>
+                    <option value="" class="" selected="selected">-- Select an option--</option>
+                    <option label="Equity" value="Equity">Equity</option>
+                    <option label="Debt" value="Debt">Debt</option>
+                    <option label="Awards" value="Awards">Awards</option>
+                    <option label="Bootstrapped" value="Bootstrapped">Bootstrapped</option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label for="fCostStructure" class="form-label">Total Funds Received Since Incorporation</label>
+                <select name="total_funds" class="form-select" aria-label="Default select example">
+                    <option value="" class="" selected="selected">-- Select an option--</option>
+                    <option label="0 To 1 Cr" value="0 To 1 Cr">0 To 1 Cr</option>
+                    <option label="1 To 3 Cr" value="1 To 3 Cr">1 To 3 Cr</option>
+                    <option label="3 To 10 Cr" value="3 To 10 Cr">3 To 10 Cr</option>
+                    <option label="Above 10 Cr" value="Above 10 Cr">Above 10 Cr</option>
+                </select>
+            </div>
+            <br>
+            <hr>
+            <p><b>Financial Details of last 3 Years (if any)</b>
+                <img src="info.png" class="info-icon" onclick="myup7()" id="a1" align="info">
+                <!-- <a data-bs-toggle="tooltip" data-bs-placement="top" title="Financial Details like Balance Sheet / Audit Statement (if any)"><img src="info.png" class="info-icon" id="a1" align="info"> </a>--></p> 
+                
+        <p id="demo7"></p>
+        <script>
+            function myup7() {
+                document.getElementById("demo7").innerHTML = "Financial Details like Balance Sheet / Audit Statement (if any). <img src='cross.jpg' class='info-icon' onclick='myup17()' id='a1' align='info'>";
+            }
+            function myup17() {
+                document.getElementById("demo7").innerHTML = " ";
+            }
+        </script>
+            <div class="row g-3">
+                <div class=" col-md-4">
+                    <label for="inputPassword4" class="form-label">Financial Year</label>
+                    <input name="Financial_year" type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class=" col-md-4">
+                    <label for="inputPassword4" class="form-label">Audited Financial Numbers(in INR)</label>
+                    <input name="Audited_fn" type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class=" col-md-4">
+                    <label for="inputPassword4" class="form-label">Upload Proof(Audited statement from CA)</label>
+                    <input class="form-control" onchange="validateSize(this)" name="media" type="file" id="formFile">
+                </div>
+                <script>function validateSize(input) {
+                    const fileSize = input.files[0].size / 1024; // in MiB
+                    if (fileSize > 2) {
+                      alert('File size exceeds 1 MB');
+                      // $(file).val(''); //for clearing with Jquery
+                    } else {
+                      // Proceed further
+                    }
+                  }</script>
+                <div class="field_wrapper">
+                    <div>
+                        <a href="javascript:void(0);" class="add_button" title="Add field"><img src="add.png" id="a2"></a>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function() {
+                var maxField = 10; //Input fields increment limitation
+                var addButton = $('.add_button'); //Add button selector
+                var wrapper = $('.field_wrapper'); //Input field wrapper
+                var fieldHTML = '<div><div class="row"><div class=" col-md-4 a3"><input type="text" name="Financial_year" class="form-control" id="inputEmail4" placeholder="Financial Year"></div><div class=" col-md-4 a3"><input type="text" name="Audited_fn" class="form-control" id="inputEmail4"  placeholder="Audited_financial number "></div><div class=" col-md-4 a3"><input name="media"  class="form-control" type="file" id="formFile" ></div><a href="javascript:void(0);" class="remove_button"><img src="cross.jpg" id="a2"></a></div></div>'; //New input field html 
+                var x = 1; //Initial field counter is 1
+                //Once add button is clicked
+                $(addButton).click(function() {
+                    //Check maximum number of input fields
+                    if (x < maxField) {
+                        x++; //Increment field counter
+                        $(wrapper).append(fieldHTML); //Add field html
+                    }
+                });
+                //Once remove button is clicked
+                $(wrapper).on('click', '.remove_button', function(e) {
+                    e.preventDefault();
+                    $(this).parent('div').remove(); //Remove field html
+                    x--; //Decrement field counter
+                });
+            });
+            </script>
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <button type="submit" id="btn1" class="btn btn-primary">Submit</button>
+
+            </div>
+    </div>
+    </form>
+    </div>
+    <!--                    end of form                      -->
+    <br><br>
+    <!-- End Subscribe & Social Links Widget -->
+    <!-- Start Copyright -->
+    <div class="footer-clean">
+        <footer class="l9">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-2 item">
+                        <h3>Explore</h3>
+                        <ul>
+                            <li><a href="https://mitaoe.ac.in/opportunities.php">CAREERS </a></li>
+                            <li><a href="https://alumni.mitaoe.ac.in/" target="_blank">ALUMNI</a></li>
+                            <li><a href="https://mitaoe.ac.in/contact-us.php">CONTACT</a></li>
+                            <li><a href="https://mitaoe.ac.in/blog.php">BLOG</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-2 item">
+                        <h3>IMP Links</h3>
+                        <ul>
+                            <li><a href="https://mitaoe.ac.in/mitaoe-nirf.php">NIRF</a></li>
+                            <li><a href="https://mitaoe.ac.in/mandatory-disclosure.php">MANDATORY DISCLOSURE</a></li>
+                            <li><a href="https://mitaoe.ac.in/mitaoe-downloads.php">DOWNLOADS</a></li>
+                            <li><a href="https://mitaoe.ac.in/">READ MORE</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-2 item">
+                        <h3>IMP Links</h3>
+                        <ul>
+                            <li><a href="https://mitaoe.ac.in/mitaoe-quality-assurance.php">IQAC</a></li>
+                            <li><a href="https://mitaoe.ac.in/mitaoe-statutory-compliance.php">STATUTORY COMPLIANCE</a></li>
+                            <li><a href="https://mitaoe.ac.in/mitaoe-committees.php">GRIEVANCE REDRESSAL</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 item social">
+                        <div class="socials">
+                            <a href="https://www.facebook.com/MITAOEOfficial/" id="fb" class="icon-button twitter" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i><span></span></a>
+                            <a href="https://www.youtube.com/channel/UCL4DWs9R4irwWUTFg8BYsOQ" id="fb" class="icon-button twitter" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i><span></span></a>
+                            <a href="https://www.linkedin.com/company/mit-academy-of-engineering/" id="linkedin1" class="icon-button facebook" target="_blank"><i class="fab fa-linkedin"></i><span></span></a>
+                            <a href="https://www.instagram.com/mitacademyofengineering/" id="insta" class="icon-button google-plus" target="_blank"><i class="fab fa-instagram"></i><span></span></a>
+                        </div>
+                        <p id="copyright" class="copyright"></p>
+                        <script>
+                        var d = new Date()
+                        var D = d.getFullYear()
+                        document.getElementById("copyright").innerHTML = ' &copy' + D + ' MIT Academy of Engineering';
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- End Footer -->
+    <!-- End Container -->
+    <!-- Go To Top Link -->
+    <script>
+    $(document).ready(function() {
+        $("#basic-form").validate();
+    });
+    </script>
+
+  <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+
+
+
+</body>
+
+</html>
+
+
+

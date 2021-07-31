@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <%- include('./Assets/header'); %>
+ 
+ <title>Team -Incubatee</title>
+
+
+<body onload="myFunction()">
+<div id="loading"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+     <a class="navbar-brand" href="/"><img src="images/logo.jpg" alt=""></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%=  Username%>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+           
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+           
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- Navbar -->
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link " id="l10" href="/personal">Personal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " id="l10" href="/startup">Basic</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="l10" href="/team">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/ip_form">IP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/Businessmodel">Business Model</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/finance">Financials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="l10" href="/Upload_form">Uploads</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" id="c1">
+    <div class="info">
+      <p> Note :  <img src="info.png" class="info-icon" id="a1" align="info"> Symbol will Tell you More About the Given Field .</p>
+      <p> Note : Field with ( <span id="req1">*</span> ) Marked are the Required One .</p>
+    </div>
+    <h6 class="display-6">Founder Details</h6>
+    <br>
+    <!-- form start -->
+    <form action="/team" method="POST" class="row g-3 needs-validation " id="basic-form">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="inputFormRow">
+            <div class="input-group mb-3">
+              <div class="row col-lg-12">
+                <div class=" col-md-2">
+                  <label for="inputPassword4" class="form-label">Name</label><span id="req1">*</span>
+                  <input type="text" name="found_name" class="form-control" id="inputEmail4" required>
+                </div>
+                <div class=" col-md-2">
+                  <label for="inputPassword4" class="form-label">Designation</label>
+                  <input type="text" name="found_designation" class="form-control" id="inputEmail4">
+
+
+                </div>
+                <div class=" col-md-2">
+                  <label for="inputPassword4" class="form-label">DIN Number</label>
+                  <input type="text" name="found_DIN" class="form-control" id="inputEmail4">
+
+
+                </div>
+                <div class=" col-md-2">
+                  <label for="inputPassword4" class="form-label">Contact</label>
+                  <input type="text" name="found_contact" class="form-control" id="inputEmail4">
+
+
+                </div>
+                <div class=" col-md-2">
+                  <label for="inputPassword4" class="form-label">Email-id</label>
+                  <input type="email" name="found_email" class="form-control" id="inputEmail4">
+
+
+                </div>
+                <div class=" col-md-2">
+                  <label for="inputPassword4" class="form-label">LinkedinProfile Url</label>
+                  <input type="url" name="found_linkedin" class="form-control" id="inputEmail4">
+
+
+                </div>
+
+
+              </div>
+
+            </div>
+            <div id="newRow"></div>
+            <a id="addRow" type="button" class="btn "><img src="add.png" id="a2"></a>
+          </div>
+
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+          // add row
+          $("#addRow").click(function () {
+            var html = '';
+            html += '<div id="inputFormRow">';
+            html += '<div class="input-group mb-3">';
+            html += '<br> <div class="inputFormRow"><div class="input-group mb-3"><div class="row"><div class=" col-md-2 a3"><input type="text" class="form-control" name="found_name" id="inputEmail4" placeholder="Name" required></div><div class=" col-md-2 a3"><input type="text" class="form-control" name="found_designation" id="inputEmail4" placeholder="Designation" ></div><div class=" col-md-2 a3"><input type="text" class="form-control"  name="found_DIN" id="inputEmail4" placeholder="DIN Number" required></div><div class=" col-md-2 a3"><input type="text" class="form-control" id="inputEmail4" name="found_contact" placeholder="Contact"></div><div class=" col-md-2 a3"><input type="text" class="form-control" id="inputEmail4" name="found_email" placeholder="Email-id"></div><div class=" col-md-2 a3"><input type="text" class="form-control" id="inputEmail4" name="found_linkedin" placeholder="Linkedin Profile Url"></div></div></div>';
+            html += '<div class="input-group-append">';
+            html += '<a id="removeRow" type="button" class="btn t"><img src="cross.jpg" id="a2"></a></div>';
+            html += '</div>';
+            html += '</div>';
+
+            $('#newRow').append(html);
+          });
+
+          // remove row
+          $(document).on('click', '#removeRow', function () {
+            $(this).closest('#inputFormRow').remove();
+          });
+        </script>
+
+        <hr id="mar1">
+
+        <h6 class="display-6" id="mar1">Team</h6>
+        <br>
+
+        <div class=" col-md-2">
+
+          <label for="inputPassword4" class="form-label">Name</label><span id="req1">*</span>
+          <input type="text" name="name" class="form-control" id="inputEmail4" required>
+
+
+        </div>
+        <div class=" col-md-2">
+
+          <label for="inputPassword4" class="form-label">Designation</label>
+          <input type="text" name="Designation" class="form-control" id="inputEmail4">
+
+
+        </div>
+        <div class="  col-md-2">
+          <label for="inputPassword4" class="form-label">Work Experience</label>
+          <select class="form-select" name="rw_experience" aria-label="Default select example">
+            <option value="" translate="" class="ng-scope" selected="selected">Select</option>
+            <option value="0-1 Year" translate="" class="ng-scope">0-1 Year</option>
+            <option value="1-5 Years" translate="" class="ng-scope">1-5 Years</option>
+            <option value="5-10 Years" translate="" class="ng-scope">5-10 Years</option>
+            <option value="10-15 Years" translate="" class="ng-scope">10-15 Years</option>
+            <option value="15-20 Years" translate="" class="ng-scope">15-20 Years</option>
+            <option value="20 Years &amp; Above" translate="" class="ng-scope">20 Years &amp;Above</option>
+          </select>
+
+
+        </div>
+        <div class=" col-md-2">
+          <label for="inputPassword4" class="form-label">Qualification</label>
+          <input type="text" name="Qualification" class="form-control" id="inputEmail4">
+
+
+        </div>
+        <div class=" col-md-2">
+          <label for="inputPassword4" class="form-label">Adhar-card Number</label>
+          <input type="text" name="Adhar_no" class="form-control" id="inputEmail4">
+
+
+        </div>
+        <div class=" col-md-2">
+          <label for="inputPassword4" class="form-label">Brief About Profile</label>
+          <textarea class="form-control" name="profile" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+
+        </div>
+
+        <div class="field_wrapper">
+          <div>
+
+            <a href="javascript:void(0);" class="add_button" title="Add field"><img src="add.png" id="a2"></a>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+
+          $(document).ready(function () {
+            var maxField = 10; //Input fields increment limitation
+            var addButton = $('.add_button'); //Add button selector
+            var wrapper = $('.field_wrapper'); //Input field wrapper
+            var fieldHTML = '<div><div class="row"><div class=" col-md-2 a3"><input type="text" class="form-control"  name="name"  id="inputEmail4" placeholder="Name"></div><div class=" col-md-2 a3"><input type="text" name="Designation" class="form-control" id="inputEmail4" placeholder="Designation"></div><div class=" col-md-2 a3"><select name="rw_experience" class="form-select" aria-label="Default select example" placeholder=""><option value="" translate="" class="ng-scope" selected="selected">Select</option><option value="0-1 Year" translate="" class="ng-scope">0-1 Year</option><option value="1-5 Years" translate="" class="ng-scope">1-5 Years</option><option value="5-10 Years" translate="" class="ng-scope">5-10 Years</option><option value="10-15 Years" translate="" class="ng-scope">10-15 Years</option><option value="10-15 Years" translate="" class="ng-scope">10-15 Years</option><option value="15-20 Years" translate="" class="ng-scope">15-20 Years</option><option value="20 Years &amp; Above" translate="" class="ng-scope">20 Years &amp;Above</option></select></div><div class=" col-md-2 a3"><input type="text" name="Qualification" class="form-control" id="inputEmail4" placeholder="Qualification"></div><div class=" col-md-2 a3"><input type="text" class="form-control" name="Adhar_no"   id="inputEmail4" placeholder="Adhar-card Number"></div><div class=" col-md-2"><textarea class="form-control a3" ssid="exampleFormControlTextarea1" rows="3" placeholder="Brief About Profile"></textarea></div><a class="remove_button btn12"><img src="cross.jpg" id="a2"></a></div></div>'; //New input field html 
+            var x = 1; //Initial field counter is 1
+            //Once add button is clicked
+            $(addButton).click(function () {
+              //Check maximum number of input fields
+              if (x < maxField) {
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+              }
+            });
+            //Once remove button is clicked
+            $(wrapper).on('click', '.remove_button', function (e) {
+              e.preventDefault();
+              $(this).parent('div').remove(); //Remove field html
+              x--; //Decrement field counter
+            });
+          });
+        </script>
+
+        <div class="col-md-5">
+        </div>
+        <div class="col-md-7">
+
+          <button type="submit" id="btn1" class="btn btn-primary">Submit</button>
+       
+
+        </div>
+      </div>
+
+    </form>
+  </div>
+  </div>
+
+  <!-- footer -->
+  <br><br>
+  <div class="footer-clean">
+    <footer class="l9">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-4 col-md-2 item">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/opportunities.php">CAREERS </a></li>
+              <li><a href="https://alumni.mitaoe.ac.in/" target="_blank">ALUMNI</a></li>
+              <li><a href="https://mitaoe.ac.in/contact-us.php">CONTACT</a></li>
+
+              <li><a href="https://mitaoe.ac.in/blog.php">BLOG</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-2 item">
+            <h3>IMP Links</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/mitaoe-nirf.php">NIRF</a></li>
+              <li><a href="https://mitaoe.ac.in/mandatory-disclosure.php">MANDATORY DISCLOSURE</a></li>
+
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-downloads.php">DOWNLOADS</a></li>
+              <li><a href="https://mitaoe.ac.in/">READ MORE</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-4 col-md-2 item">
+            <h3>IMP Links</h3>
+            <ul>
+              <li><a href="https://mitaoe.ac.in/mitaoe-quality-assurance.php">IQAC</a></li>
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-statutory-compliance.php">STATUTORY COMPLIANCE</a></li>
+
+
+              <li><a href="https://mitaoe.ac.in/mitaoe-committees.php">GRIEVANCE REDRESSAL</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 item social">
+
+            <div class="socials">
+
+              <a href="https://www.facebook.com/MITAOEOfficial/" id="fb" class="icon-button twitter" target="_blank"><i
+                  class="fab fa-facebook" aria-hidden="true"></i><span></span></a>
+
+              <a href="https://www.youtube.com/channel/UCL4DWs9R4irwWUTFg8BYsOQ" id="fb" class="icon-button twitter"
+                target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i><span></span></a>
+
+              <a href="https://www.linkedin.com/company/mit-academy-of-engineering/" id="linkedin1"
+                class="icon-button facebook" target="_blank"><i class="fab fa-linkedin"></i><span></span></a>
+
+              <a href="https://www.instagram.com/mitacademyofengineering/" id="insta" class="icon-button google-plus"
+                target="_blank"><i class="fab fa-instagram"></i><span></span></a>
+
+
+
+            </div>
+
+
+
+             <p id="copyright" class="copyright"></p>
+                 <script>
+                      var d = new Date()
+                      var D = d.getFullYear()
+            document.getElementById("copyright").innerHTML =' &copy' +D+' MIT Academy of Engineering';
+            </script>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- End Footer -->
+  </div>
+  <!-- End Container -->
+
+  <!-- Go To Top Link -->
+
+  <script>
+    (function () {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
+  <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+
+
+
+
+</body>
+
+</html>
+     
+

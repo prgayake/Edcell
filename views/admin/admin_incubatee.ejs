@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+     <!-- Favicons -->
+  <link rel="icon" type="image/png" href="images/logo.jpg"/>
+    <title>Ecell Admin - Incubatee</title>
+    <!-- Bootstrap core CSS-->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    </link>
+    <style>
+        .bgcol{
+  background-image: linear-gradient(to bottom , #35a0f8, #76c0ca);
+  
+                }
+.bgcol2{
+  background-image: linear-gradient(to bottom , #05800b, #78b877);
+  color:white;
+}
+.bgcol1:hover{
+    font-weight:bolder;
+} 
+.bgcol2:hover{
+    font-weight:bolder;
+}
+.bgcol1{
+  background-image: linear-gradient(to bottom , #35a0f8, #77c8d3);
+  color:white;
+}
+    </style>
+</head>
+
+<body id="page-top" onload="myFunction()"><div id="loading"></div>
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+        <a class="navbar-brand mr-1" href="/admin">Ecell Dashboard</a>
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Navbar Search -->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <!-- <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div> -->
+        </form>
+        <!-- Navbar -->
+        <ul class="navbar-nav ml-auto ml-md-0">
+           
+          <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user-circle fa-fw"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+           
+              
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </div>
+          </li>
+        </ul>
+    </nav>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/admin_incunatee">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Incubatee</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin_ecell">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Ecell</span></a>
+            </li>
+        </ul>
+        <div id="content-wrapper">
+            <marquee behavior="alternate">
+                Welcome To incubatee Section
+            </marquee>
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Dashboard</a>
+                    <li class="breadcrumb-item active">Incubatees</li>
+                </ol>
+                <!-- Icon Cards-->
+                <div class="row">
+                    <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card text-white bgcol o-hidden h-100">
+                            <h1></h1>
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-comments"></i>
+                                </div>
+                                <div class="mr-5">DASHBOARD</div>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="/admin">
+                                <span class="float-left">View Details</span>
+                                <span class="float-right">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card text-white bgcol o-hidden h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-list"></i>
+                                </div>
+                                <div class="mr-5">ECELL Members</div>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="/admin_ecell">
+                                <span class="float-left">View Details</span>
+                                <span class="float-right">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card text-white bg-danger o-hidden h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-life-ring"></i>
+                                </div>
+                                <div class="mr-5">Other Details</div>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="#">
+                                <span class="float-left">View Details</span>
+                                <span class="float-right">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div> -->
+                </div>
+                <div>
+                    <span><button class="btn btn-success bgcol2 float-right" onclick="tablesToExcel(['Incubatees','Basic','Team','Businessmodel','ipform','finance'], ['Incubatees','Basic','Team','Businessmodel','IP Form','finance'], 'Incubatee.xls', 'Excel')">Export All To Excel</button></span>
+                    <span><a href="/download" title=""><button style="margin-right: 5px;" class="btn  float-right bgcol1">Download All Zips</button></a>
+                    </span>
+                    <br><br>
+                </div>
+                <!-- DataTables Example -->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fas fa-table"></i>
+                        Incubatees</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>Role</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                        <th>Download</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>Role</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                        <th>Download</th>
+                                        
+                                </tfoot>
+                                <tbody style="text-align:left">
+                                    </tr>
+                                    <% data.forEach(function(data){%>
+                                    <%if(data.val().Role== 'Incubiator'){%>
+                                    <tr>
+                                        <td>
+                                            <%=data.val().Name%>
+                                        </td>
+                                        <td>
+                                            <%=data.val().Email%>
+                                        </td>
+                                        <td>
+                                            <%=data.val().Mobile%>
+                                        </td>
+                                        <td>
+                                            <%=data.val().Role%>
+                                        </td>
+                                        <td>
+                                            <%=data.val().Date%>
+                                        </td>
+                                        <td>
+                                            <form method="POST" action="/getprofile" >
+                                                <input type="text" name="profilelink" value="<%=data.val().Username%>" hidden>
+                                                <button class="btn bgcol1">View Profile</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form method="POST" action="/getdocs" >
+                                                <input type="text" name="profilelink" value="<%=data.val().Username%>" hidden>
+                                                <button class="btn bgcol2">Download </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                    <% })  %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright © Ecell2021</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <script>
+  var preloader = document.getElementById("loading");
+    function myFunction(){
+      preloader.style.display = 'none';
+    };
+  </script>
+  <style type="text/css">
+  #loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #fff
+  url('https://flevix.com/wp-content/uploads/2019/07/Comp-2.gif')
+   no-repeat center center; 
+  z-index: 99999;
+}
+
+</style>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+</body>
+
+</html>
+
+<table id="Incubatees" hidden="">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>Role</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                               
+                                <tbody >
+                                    </tr>
+                                    <% data.forEach(function(data){%>
+                                    <%if(data.val().Role== 'Incubiator'){%>
+                                    <tr>
+                                        <td>
+                                            <%=data.val().Name%>
+                                        </td>
+                                        <td>
+                                            <%=data.val().Email%>
+                                        </td>
+                                        <td>
+                                            <%=data.val().Mobile%>
+                                        </td>
+                                        <td>
+                                            <%=data.val().Role%>
+                                        </td>
+                                        <td>
+                                            <%=data.val().Date%>
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                    <% })  %>
+                                </tbody>
+                            </table>
+
+<table id="ipform" hidden>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>IP_Description</th>
+            <th>IP_No</th>
+            <th>IP_validity</th>
+            <th>Product_name</th>
+            <th>country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% IpForm.forEach(function(IpForm){%>
+        <tr>
+            <td>
+                <%=IpForm.val().Name%>
+            </td>
+            <th>
+                <%=IpForm.val().IP_Description%>
+            </th>
+            <th>
+                <%=IpForm.val().IP_No%>
+            </th>
+            <th>
+                <%=IpForm.val().IP_validity%>
+            </th>
+            <th>
+                <%=IpForm.val().Product_name%>
+            </th>
+            <th>
+                <%=IpForm.val().country%>
+            </th>
+        </tr>
+        <% })  %>
+    </tbody>
+</table>
+<table id="Team" hidden>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Founders Names</th>
+            <th>Founders Designation</th>
+            <th>Founders DIN Number</th>
+            <th>Founders Contact</th>
+            <th>Founders Email-id</th>
+            <th>Founders LinkedinProfile Url</th>
+            <th>Team Names</th>
+            <th>Team Designation</th>
+            <th>Team Work Experience</th>
+            <th>Team Qualification</th>
+            <th>Team Adhar-card Number</th>
+            <th>Team Brief About Profile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% Team.forEach(function(Team){%>
+        <tr>
+            <td>
+                <%=Team.val().Name %>
+            </td>
+            <td>
+                <%=Team.val().founderName %>
+            </td>
+            <td>
+                <%=Team.val().founderDesignation %>
+            </td>
+            <td>
+                <%=Team.val().DIN_Number%>
+            </td>
+            <td>
+                <%=Team.val().founderContact %>
+            </td>
+            <td>
+                <%=Team.val().founderEmail  %>
+            </td>
+            <td>
+                <%=Team.val().founderLinkedin  %>
+            </td>
+            <td>
+                <%=Team.val().NamesOfMembers  %>
+            </td>
+            <td>
+                <%=Team.val().Designation %>
+            </td>
+            <td>
+                <%=Team.val().Relevant_Work_Experience%>
+            </td>
+            <td>
+                <%=Team.val().Qualification  %>
+            </td>
+            <td>
+                <%=Team.val().Adhar_No %>
+            </td>
+            <td>
+                <%=Team.val().Profile_info  %>
+            </td>
+        </tr>
+        <% })  %>
+    </tbody>
+</table>
+<table id="Businessmodel" hidden>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Start-up Current Stage</th>
+            <th>Uniqueness Factor / Uniqueness Features</th>
+            <th>Key Partners / Resources </th>
+            <th>Cost Structure </th>
+            <th>Revenue Inflow</th>
+            <th>Customer Segment</th>
+            <th>Key Matrix </th>
+            <th>Channels </th>
+            <th>Unique Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% Businessmodel.forEach(function(Businessmodel){%>
+        <tr>
+            <td>
+                <%=Businessmodel.val().Name%>
+            </td>
+            <th>
+                <%=Businessmodel.val().uniqueness_factor%>
+            </th>
+            <th>
+                <%=Businessmodel.val().key_partners%>
+            </th>
+            <th>
+                <%=Businessmodel.val().cost_structure%>
+            </th>
+            <th>
+                <%=Businessmodel.val().Revenue_inflow%>
+            </th>
+            <th>
+                <%=Businessmodel.val().Customer_Segment%>
+            </th>
+            <th>
+                <%=Businessmodel.val().Key_Matrix%>
+            </th>
+            <th>
+                <%=Businessmodel.val().Channels%>
+            </th>
+            <th>
+                <%=Businessmodel.val().Unique_Value%>
+            </th>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+<table id="finance" hidden>
+    <thead>
+        <tr>
+            <th>Audited Financial Numbers </th>
+            <th>Financial Year</th>
+            <th>Maximum Turnover of Previous Three Years</th>
+            <th>Total Funds Received Since Incorporation</th>
+            <th>Startup’s Current Funding Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% finance.forEach(function(finance){%>
+        <tr>
+            <th>
+                <%=finance.val().AuditedFn%>
+            </th>
+            <th>
+                <%=finance.val().FinancialYear%>
+            </th>
+            <th>
+                <%=finance.val().MaxTurnover%>
+            </th>
+            <th>
+                <%=finance.val().TotalFund%>
+            </th>
+            <th>
+                <%=finance.val().currentFunding%>
+            </th>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+<table id="Basic" hidden>
+    <thead>
+        <tr>
+            <th>Name of Startup / Organization</th>
+            <th>Product Name</th>
+            <th>Website URL</th>
+            <th>Firm Registration Date</th>
+            <th>Company Registered in Maharashtra</th>
+            <th>Registered Company Address</th>
+            <th>State</th>
+            <th>District</th>
+            <th>City</th>
+            <th>Business Model Type</th>
+            <th>Firm Type</th>
+            <th>Registration Number</th>
+            <th>Startup Sector</th>
+            <th>Technology Used</th>
+            <th>Describe your Startup</th>
+            <th>Other</th>
+            <th>Team Size</th>
+            <th>Awards / Achievments</th>
+            <th>How did you hear about us</th>
+            <th>Name of the Incubator</th>
+            <th>Name of Account Holder</th>
+            <th>Account Number</th>
+            <th>Name of Bank</th>
+            <th>IFSC Code</th>
+            <th>Branch Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% Basic.forEach(function(Basic){%>
+        <tr>
+            <th>
+                <%=Basic.val().startup_name%>
+            </th>
+            <th>
+                <%=Basic.val().product_name%>
+            </th>
+            <th>
+                <%=Basic.val().Website%>
+            </th>
+            <th>
+                <%=Basic.val().Firm_date%>
+            </th>
+            <th>
+                <%=Basic.val().Register_place%>
+            </th>
+            <th>
+                <%=Basic.val().Company_Address%>
+            </th>
+            <th>
+                <%=Basic.val().State%>
+            </th>
+            <th>
+                <%=Basic.val().district%>
+            </th>
+            <th>
+                <%=Basic.val().city%>
+            </th>
+            <th>
+                <%=Basic.val().Businessmodel%>
+            </th>
+            <th>
+                <%=Basic.val().firm_type%>
+            </th>
+            <th>
+                <%=Basic.val().Registration_no%>
+            </th>
+            <th>
+                <%=Basic.val().startup_sector%>
+            </th>
+            <th>
+                <%=Basic.val().technology%>
+            </th>
+            <th>
+                <%=Basic.val().startup_descrption%>
+            </th>
+            <th>
+                <%=Basic.val().other%>
+            </th>
+            <th>
+                <%=Basic.val().team_size%>
+            </th>
+            <th>
+                <%=Basic.val().startup_awards%>
+            </th>
+            <th>
+                <%=Basic.val().Social%>
+            </th>
+            <th>
+                <%=Basic.val().Incubator_name%>
+            </th>
+            <th>
+                <%=Basic.val().accont_name%>
+            </th>
+            <th>
+                <%=Basic.val().accont_no%>
+            </th>
+            <th>
+                <%=Basic.val().bank_name%>
+            </th>
+            <th>
+                <%=Basic.val().IFSC%>
+            </th>
+            <th>
+                <%=Basic.val().Branch%>
+            </th>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+<script type="text/javascript">
+var tablesToExcel = (function() {
+    var uri = 'data:application/vnd.ms-excel;base64,',
+        tmplWorkbookXML = '<?xml version="1.0"?><?mso-application progid="Excel.Sheet"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">' +
+        '<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office"><Author>Axel Richter</Author><Created>{created}</Created></DocumentProperties>' +
+        '<Styles>' +
+        '<Style ss:ID="Currency"><NumberFormat ss:Format="Currency"></NumberFormat></Style>' +
+        '<Style ss:ID="Date"><NumberFormat ss:Format="Medium Date"></NumberFormat></Style>' +
+        '</Styles>' +
+        '{worksheets}</Workbook>',
+        tmplWorksheetXML = '<Worksheet ss:Name="{nameWS}"><Table>{rows}</Table></Worksheet>',
+        tmplCellXML = '<Cell{attributeStyleID}{attributeFormula}><Data ss:Type="{nameType}">{data}</Data></Cell>',
+        base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) },
+        format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+    return function(tables, wsnames, wbname, appname) {
+        var ctx = "";
+        var workbookXML = "";
+        var worksheetsXML = "";
+        var rowsXML = "";
+
+        for (var i = 0; i < tables.length; i++) {
+            if (!tables[i].nodeType) tables[i] = document.getElementById(tables[i]);
+            for (var j = 0; j < tables[i].rows.length; j++) {
+                rowsXML += '<Row>'
+                for (var k = 0; k < tables[i].rows[j].cells.length; k++) {
+                    var dataType = tables[i].rows[j].cells[k].getAttribute("data-type");
+                    var dataStyle = tables[i].rows[j].cells[k].getAttribute("data-style");
+                    var dataValue = tables[i].rows[j].cells[k].getAttribute("data-value");
+                    dataValue = (dataValue) ? dataValue : tables[i].rows[j].cells[k].innerHTML;
+                    var dataFormula = tables[i].rows[j].cells[k].getAttribute("data-formula");
+                    dataFormula = (dataFormula) ? dataFormula : (appname == 'Calc' && dataType == 'DateTime') ? dataValue : null;
+                    ctx = {
+                        attributeStyleID: (dataStyle == 'Currency' || dataStyle == 'Date') ? ' ss:StyleID="' + dataStyle + '"' : '',
+                        nameType: (dataType == 'Number' || dataType == 'DateTime' || dataType == 'Boolean' || dataType == 'Error') ? dataType : 'String',
+                        data: (dataFormula) ? '' : dataValue,
+                        attributeFormula: (dataFormula) ? ' ss:Formula="' + dataFormula + '"' : ''
+                    };
+                    rowsXML += format(tmplCellXML, ctx);
+                }
+                rowsXML += '</Row>'
+            }
+            ctx = { rows: rowsXML, nameWS: wsnames[i] || 'Sheet' + i };
+            worksheetsXML += format(tmplWorksheetXML, ctx);
+            rowsXML = "";
+        }
+
+        ctx = { created: (new Date()).getTime(), worksheets: worksheetsXML };
+        workbookXML = format(tmplWorkbookXML, ctx);
+        console.log(workbookXML);
+        var link = document.createElement("A");
+        link.href = uri + base64(workbookXML);
+        link.download = wbname || 'Workbook.xls';
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+})();
+</script>
