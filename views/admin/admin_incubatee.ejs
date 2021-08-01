@@ -161,7 +161,7 @@
                     </div> -->
                 </div>
                 <div>
-                    <span><button class="btn btn-success bgcol2 float-right" onclick="tablesToExcel(['Incubatees','Basic','Team','Businessmodel','ipform','finance'], ['Incubatees','Basic','Team','Businessmodel','IP Form','finance'], 'Incubatee.xls', 'Excel')">Export All To Excel</button></span>
+                    <span><button class="btn btn-success bgcol2 float-right" onclick="tablesToExcel(['Incubatees','Basic','Team','Businessmodel','ipform','finance','upload'], ['Incubatees','Basic','Team','Businessmodel','IP Form','finance','Upload'], 'Incubatee.xls', 'Excel')">Export All To Excel</button></span>
                     <span><a href="/download" title=""><button style="margin-right: 5px;" class="btn  float-right bgcol1">Download All Zips</button></a>
                     </span>
                     <br><br>
@@ -377,6 +377,36 @@
             <th>
                 <%=IpForm.val().country%>
             </th>
+        </tr>
+        <% })  %>
+    </tbody>
+</table>
+<table id="upload" hidden>
+    <thead>
+        <tr>
+            <th>CompanyRegID</th>
+            <th>PancardNo</th>
+            <th>PancardNo</th>
+            <th>companyGSTIN</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <% upload.forEach(function(upload){%>
+        <tr>
+            <td>
+                <%=upload.val().CompanyRegID%>
+            </td>
+            <th>
+                <%=upload.val().PancardNo%>
+            </th>
+            <th>
+                <%=upload.val().PancardNo%>
+            </th>
+            <th>
+                <%=upload.val().companyGSTIN%>
+            </th>
+           
         </tr>
         <% })  %>
     </tbody>

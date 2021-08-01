@@ -97,7 +97,7 @@ router.post('/login-register', ifLoggedin, (req, res) => {
                 req.session.username = snap.val().Username;
                 console.log(snap.val().Role)
 
-                if (snap.val().Role == 'Incubiator') {
+                if (snap.val().Role == 'Incubiator' || snap.val().Role == 'Incubatee') {
 
                     res.redirect('/incubateehome');
 

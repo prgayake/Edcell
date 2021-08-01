@@ -279,6 +279,9 @@ router.get('/admin_incubatee', (req, res) => {
             db.child('Businessmodel').on('value', function(snap3) {
                 db.child('Team').on('value', function(snap4) {
                     db.child('IpForm').on('value', function(snap5) {
+
+                        db.child('UploadDocDeatsils').on('value', function(snap7) {
+
                     db.child('users').orderByChild('Email').on('value', function(snap6) {
                       
                        res.render('./admin/admin_incubatee', {
@@ -287,10 +290,13 @@ router.get('/admin_incubatee', (req, res) => {
                             Businessmodel: snap3,
                             Team:snap4,
                             IpForm: snap5 , 
-                            finance: snap1 
+                            finance: snap1,
+                            upload:snap7
                             
                         })
                     });
+
+                });
                 });
             })
         });
