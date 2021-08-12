@@ -51,7 +51,7 @@ const ifLoggedin = (req, res, next) => {
 router.get('/', ifNotLoggedin, (req, res) => {
     const db = firebase.database().ref();
      const query = db.child('users').child(req.session.username).get().then((snap) => {
-        if(snap.val().Role == 'Incubiator')
+        if(snap.val().Role == 'Incubatee')
         {
          res.redirect('/incubateehome')   
         }
@@ -320,7 +320,7 @@ router.get('/admin_ecell',requireLogin, (req, res) => {
 })
 
 router.get('/admin',requireLogin,(req, res)=>{
-  var children = firebase.database().ref('users').orderByChild('Role').equalTo('Incubiator').once("value", (snapshot) => {
+  var children = firebase.database().ref('users').orderByChild('Role').equalTo('Incubatee').once("value", (snapshot) => {
       const count = snapshot.numChildren();
       console.log("count" + count);
 
