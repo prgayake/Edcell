@@ -22,6 +22,11 @@
                               document.getElementById('viewform').disabled = true;
 
                             }
+
+                            if(snap2.val()!=null)
+                            {
+                              document.getElementById('btn1').disabled = true;
+                            }
           
                  
                         })

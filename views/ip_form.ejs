@@ -460,6 +460,32 @@
          
 
             </div>
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+            <script>
+      
+              var username = '<%= Username%>';
+      
+              var firebaseConfig = {
+                projectId: "ecellweb-5bc04",
+                storageBucket: "ecellweb-5bc04.appspot.com"
+              };
+      
+              console.log(username);
+      
+              firebase.initializeApp(firebaseConfig);
+      
+              var db = firebase.database().ref();
+              db.child('IpForm').child(username).on('value', snap2 => {
+      
+                if (snap2.val() != null) {
+                  document.getElementById("btn1").disabled = true;
+      
+                }
+      
+              })
+            </script>
     </div>
     </div>
     </form>
