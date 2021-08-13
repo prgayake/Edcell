@@ -83,11 +83,20 @@ const ifLoggedin = (req, res, next) => {
 router.post('/login-register', ifLoggedin, (req, res) => {
     var username = req.body.username;
     var pass = req.body.user_pass;
+    var flag=0;
 
     const db = firebase.database().ref();
     const query = db.child('users').child(username).get().then((snap) => {
 
-        if (snap.val().Username == username) {
+        for (let i = 0; i < username.length; i++) {
+            
+            if(username[i]=='$' || username[i]=='#' || username[i]=='.' || username[i]=='[' || username[i]==']')
+            {
+                flag=1;
+            }
+          }
+
+        if (snap.val().Username == username && flag==0) {
             firebase.auth().signInWithEmailAndPassword(snap.val().Email, pass).then(() => {
              var user = firebase.auth().currentUser;
 
@@ -152,6 +161,8 @@ router.post('/register', ifLoggedin, (req, res, next) => {
     var password = req.body.user_pass;
     var cpassword = req.body.cuser_pass;
 
+    
+
     const db = firebase.database().ref();
 
     const query = db.child('users').child(username).get().then((snap) => {
@@ -164,7 +175,7 @@ router.post('/register', ifLoggedin, (req, res, next) => {
         } else {
 
             if (cpassword == password) {
-                firebase.database().ref('users/' + username).set({
+                firebase.database().ref('users/' + username).set({                                                                       
                     Name: name,
                     Email: email,
                     Username: username,
@@ -387,6 +398,7 @@ router.post('/profile2', function(req, res) {
         Portfolio: req.body.Portfolio,
         Awards: req.body.Awards,
         skill: req.body.skills
+        
 
 
     }, function(err, result) {

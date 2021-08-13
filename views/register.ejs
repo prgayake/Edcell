@@ -98,9 +98,19 @@ input:hover{
         </div>
         <div class="inputbox">
           <span>Username</span>
-          <input type="text" name="username" id="_remail" class="form-control" placeholder="Username"  required>
+          <input type="text" name="username" id="_remail" onkeyup="trackChange(this.value)" class="form-control" placeholder="Username"  required>
           <p style="color:red">Note : Please do not use any Symbols like ".", "#", "$", "[", or "]"</p>
         </div>
+        <script>
+          function trackChange(value) {
+          for (let i = 0; i < value.length; i++) 
+          {
+          if(value[i]=='$' || value[i]=='#' || value[i]=='.' || value[i]=='[' || value[i]==']')
+          {
+              alert("Invalid Username");
+          }
+        }
+        }</script>
         <div class="inputbox">
             <span>Mobile Number</span>
               <input type="tel" name="phone" placeholder="Mobile Number" >
